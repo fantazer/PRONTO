@@ -1,0 +1,246 @@
+// ============================ Buttons ============================
+.btn
+	br(30px)
+	tr(all)
+	display inline-block
+	background none
+	border 0
+	text-align: center
+	&:hover
+		cursor pointer
+
+.btn--sm
+	@extend .btn
+	font-size 15px
+	padding 10px 25px
+
+.btn--md
+	@extend .btn
+	padding 15px 75px
+
+.btn--fix
+	@extend .btn
+	padding 15px
+	min-width 280px
+
+.btn--lg
+	@extend .btn
+	font-size 20px
+	padding 10px 30px
+
+.btn--mobile
+	@extend .btn
+	+below(768px)
+		width 100%
+		text-align center
+
+.btn--mark
+	@extend .btn
+	color white
+	background $mark
+	.nav-icon
+		fill white
+	&:hover
+		background-color darken($mark,5)
+		color white!important
+	&:active
+		background-color darken($mark,5)
+	input[type="submit"]
+		border 0
+	.nav-icon
+		fill white
+
+
+.btn--red
+	@extend .btn
+	color white
+	background $carrot
+	.nav-icon
+		fill white
+	&:hover
+		background-color darken($red,5)
+		color white!important
+	&:active
+		background-color darken($red,5)
+	input[type="submit"]
+		border 0
+	.nav-icon
+		fill white
+
+
+.btn--disable
+	@extend .disabled
+	border 1px solid $border-color
+	background-color #ffffff
+	color #000000
+
+.btn--light
+	@extend .btn
+	border 1px solid $border-color
+	background-color #ffffff
+	&:hover
+		border 1px solid $mark
+		color $mark
+	.nav-icon
+		fill $mark
+
+.btn--white
+	@extend .btn
+	border 1px solid rgba(255, 255, 255, 0.9)
+	color rgba(255, 255, 255, 0.9)
+	.nav-icon
+		fill rgba(255, 255, 255, 0.9)
+
+.btn--icon
+	flex(mid)
+	.nav-icon
+		margin-left: 10px
+
+.nav-icon
+	size 20px
+	display inline-block
+
+.btn--icon-left
+	.nav-icon
+		margin-left: 0
+		margin-right: 10px
+
+.btn-row-mid
+	flex(mid)
+	margin: 30px 0
+
+.btn--full
+	width: 100%
+	display block
+
+// incr
+.incr
+	f()
+	position relative
+.incr__nav
+	flex(mid)
+	tr(all)
+	size 40px
+	border 1px solid #dddddd
+	background white
+	round()
+	.icon
+		size 14px
+		fill $gray
+		tr()
+	&:hover
+		cp()
+		border 1px solid $mark
+		.icon
+			fill $mark
+	&:active
+		background-color darken($mark,10)
+.incr__val
+	flex(mid)
+	background white
+	position relative
+	tr(all)
+	padding: 0 15px
+	span
+		outline: none
+		user-select: none
+
+.incr--mark
+	.incr__nav
+		background: $mark
+		border 0
+		&:hover
+			background: darken($mark,10)
+		&:active
+			background:lighten($mark,10)
+		.icon
+			fill white
+
+.incr--mark-light
+	.incr__nav
+		border 1px solid $mark
+		&:hover
+			background: $mark
+			.icon
+				fill white
+		&:active
+			background:lighten($mark,10)
+		.icon
+			fill $mark
+
+
+.incr--red
+	.incr__nav
+		background: $red
+		border 0
+		&:hover
+			background: darken($red,10)
+		&:active
+			background:darken($red,20)
+		.icon
+			fill white
+
+.incr--red-light
+	.incr__nav
+		border 1px solid $red
+		&:hover
+			background: $red
+			.icon
+				fill white
+		&:active
+			background:darken($red,10)
+		.icon
+			fill $red
+
+.incr--sm
+	.incr__nav
+		size 24px
+		.icon
+			size 10px
+
+
+// Переключение с кнопки на инкремент
+.incr-btn
+	.incr-btn-wrap
+		display: none
+.incr-btn--fix
+	width: 160px
+	font-weight: 700
+	.btn--md
+		width: 100%
+		padding: 12px
+		height: 55px
+		font-size: 20px
+		flex(mid)
+	.incr
+		width: 100%
+		flex(between)
+	.incr__nav
+		width: 40px
+		height: 55px
+	.incr__minus
+		border-radius 30px 0 0 30px
+	.incr__plus
+		border-radius 0 30px 30px 0
+.incr-btn--active
+	.incr-btn__el
+		display: none
+	.incr-btn-wrap
+		display: block
+
+
+// incr === end
+
+.incr--single
+	.incr__val
+		opacity 0
+		transition none
+	.incr__minus
+		opacity 0
+
+.incr--single-active
+	.incr__val
+		opacity 1
+
+	.incr__minus
+		opacity 1

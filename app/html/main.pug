@@ -1,0 +1,27 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page
+	+header()
+	.content
+		.main-cont
+
+		.incr-btn
+			.incr-btn__el.btn--md.btn--light В корзину
+			.incr-btn-wrap
+				+incr(1)
+
+			+incr(0,"incr--green-light incr--sm")
+			+incr(0,"incr--red")
+			+incr(0,"incr--green-light")
+			+incr(0,"incr--red-light")
+
+			.add.add--sm
+				+icon("plus","icon")
+
+			hr
+
+
+			+incr(false,"incr--single incr--green-light incr--sm")
+	+footer()
+include ./block_html/_script.pug
