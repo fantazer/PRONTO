@@ -46,7 +46,12 @@ body
 	width 100%
 	margin 0
 	animation:  slideInDown  1s 1 ease-in-out;
-	z-index 10
+	z-index 20
+	bsh()
+	.header-top-wrap
+		display none
+	.header
+		padding: 10px 0
 // animate top menu === end
 
 // error
@@ -315,3 +320,656 @@ body
 	.icon
 		size 10px
 
+// slick
+// === убираем выделения активности при клик ===
+.slick-slide
+	&:hover
+		outline none!important
+	&:active
+		outline none!important
+	&:focus
+		outline none!important
+// === убираем выделения активности при клике end ===
+ 
+// === for custom navigation === 
+.slider-wrap
+	position relative
+ 
+//Навигация снаружи
+.slider-wrap--simple
+	.slider-control
+		round()
+		flex(mid)
+		tr(all)
+		size 40px
+		background: white
+		position: absolute
+		top 50%
+		margin-top: -20px
+		box-shadow 0px 2px 10px #c5c2c2
+		z-index 10
+		cp()
+		&:hover
+			background: $red
+			.icon
+				fill white
+		.icon
+			size 14px
+	.slider-control--left
+		left -20px
+	.slider-control--right
+		right -20px
+//Навигация снаружи end
+ 
+//Навигация внутри
+.slider-wrap--inarrow
+	.slider-control
+		flex(mid)
+		tr(all)
+		cp()
+		round()
+		position: absolute
+		top 50%
+		margin-top: -25px
+		z-index 10
+		background: white
+		opacity: .5
+		size 50px
+		&:hover
+			opacity: 1
+		.icon
+			size 15px
+	.slider-control--left
+		left 30px
+	.slider-control--right
+		right 30px
+	.slick-dots
+		bottom 30px
+//Навигация внутри
+// === for custom navigation === 
+ 
+//=== Внешний вид пагинации ===
+.slick-dots
+	+below(720px)
+		bottom -20px
+	width: 100%
+	display: flex !important
+	align-items: center
+	justify-content: center
+	bottom -50px
+	li
+		+below(720px)
+			size 10px
+			flex(mid)
+	.dot
+		+below(720px)
+			flex(mid)
+			size 6px
+		background: white
+		size 15px
+		display: block
+		opacity: .8
+		round()
+	.slick-active
+		.dot
+			opacity: 1
+//=== Внешний вид пагинации end===
+ 
+
+ 
+// === Для центрального вида ===
+ 
+.slick-center
+	transform: scale(1.2);
+	box-shadow 0 18px 32px #a2b8c5
+	opacity: 1 !important
+ 
+.name-slider
+	.slick-slide
+		opacity: .8
+	.slick-list
+		padding: 100px 80px!important
+	.slick-slide
+		margin: 0 20px
+ 
+// === Для центрального вида end ===
+// slick === end
+
+
+// main slider
+.main-slider__el
+	+below(768px)
+		padding: 25% 10%
+	display: block
+	bg-full()
+	padding: 16% 10%
+	//height: 500px
+	width: 100%
+
+.main-slider__el--md
+	+below(768px)
+		display none
+.main-slider__el--sm
+	+above(769px)
+		display none
+
+.main-slider
+	+below(768px)
+		margin-bottom: 10px
+	margin-bottom: 40px
+// main slider === end
+
+// header
+//.header-wrap
+.header-top-wrap
+	background: $snow
+//.main-cont
+.header-top
+	height: 50px
+	f()
+	align-items center
+	justify-content space-between
+	@extend .type--sm
+.header-location
+	f()
+	align-items center
+	.icon
+		size 22px
+		fill $mark
+.header-work
+	f()
+	align-items center
+.phone
+	f()
+	align-items center
+	.icon
+		size 20px
+		fill $mark
+	span
+		font-weight: 700
+
+.header-work__time
+	color $gray
+	margin-left: 10px
+.nav-top
+	flex(between)
+	width: 30%
+	margin: 0 10px
+.nav-top__el
+	&:hover
+		color $mark
+
+.auth
+	margin: 0 10px
+	cp()
+	span
+		tr()
+	&:hover
+		color $mark
+.lang
+	f()
+.lang__el
+	margin-left: 10px
+	color $gray
+.lang__el--active
+	color black
+.header
+	flex(between)
+	padding: 20px 0
+//.logo
+.header-nav
+	flex(between)
+	width: 54%
+.header-nav__el
+	font-weight: 700
+	white-space nowrap
+	&:hover
+		color $mark
+.header-nav__el--mark
+	br(20px)
+	padding: 8px 25px
+.header-nav__el--green
+	border 2px solid $mark
+.header-nav__el--red
+	border 2px solid $red
+	&:hover
+		color $red
+.header-cart
+	f()
+	align-items center
+	.icon
+		fill $mark
+		margin-right: 15px
+		size 30px
+.header-cart__cost
+	font-weight 700
+.header-cart__size
+	size 50px
+	background: $red
+	color white
+	flex(mid)
+	round()
+	margin-left: 10px
+// header === end
+
+
+.kind
+	display: grid
+	grid-gap 20px
+	//grid-template-columns: repeat(, fr)
+	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
+	margin-bottom: 30px
+.kind__el
+	position relative
+	bg-full()
+	padding: 50% 10%
+	tr()
+	br(28px)
+	bsh-hover()
+.kind__el-title
+	position absolute
+	bottom 0
+	left 0
+	padding: 20px 0
+	width: 100%
+	text-align center
+	color white
+	@extend .type--md
+	font-weight 700
+
+.kind-sm
+	flex(mid)
+	margin-bottom: 50px
+.kind__sm-el
+	@extend .btn--sm
+	color white
+	font-weight 700
+	font-size: 20px
+	bg-full()
+	margin: 0 5px
+	background-color: rgba(0, 0, 0, 0.7)
+	position relative
+	overflow hidden
+	bsh-hover()
+	span
+		z-index 2
+		position relative
+	&:hover
+		color white
+		&:before
+			content ''
+			background: rgba(0, 0, 0, 0.4)
+	&:before
+		content ''
+		position absolute
+		tr()
+		top 0
+		left 0
+		width: 100%
+		height: 100%
+		background: rgba(0, 0, 0, 0.49)
+
+
+// PRODUCT
+.product-el
+	background-color #ffffff
+	tr(all)
+	position: relative
+	f()
+	fl()
+
+.product-el--sm
+	.product-footer
+		flex(mid)
+		fl()
+	.product-price
+		width: 100%
+		text-align: center
+		margin-bottom: 20px
+	.product-add
+		width: initial
+	.product__title
+		text-align: center
+
+
+.product__img
+	margin-bottom: 20px
+	flex(mid)
+	img
+		margin: 0 auto
+		tr(all)
+		width: 100%
+
+.product__cont
+	f()
+	fl()
+	flex-grow 1
+
+.product__img-el
+	tr(all)
+	width: 100%
+	height: 100%
+	bg-full()
+	background-size: cover
+	padding: 50% 10%
+	br(20px)
+.product__title
+	margin-bottom: 20px
+	color $dark
+	tr(all)
+	@extend .type--md
+	font-weight 700
+	display: block
+	&:hover
+		color $mark
+
+.product-box
+	margin-bottom:auto
+
+.product__text
+	opacity .8
+	line-height: 1.6
+	tr()
+	margin-bottom: 20px
+	color $gray
+	@extend .type--sm
+.product-cont
+	+below(1024px)
+		grid-template-columns: repeat(3, 1fr)
+		margin: 30px 0
+		grid-gap 20px
+	+below(640px)
+		grid-template-columns: repeat(2, 1fr)
+	+below(480px)
+		grid-template-columns: 1fr
+	//flex(between)
+	margin-bottom: 50px
+	display: grid
+	grid-gap 40px
+	grid-template-columns: repeat(4, 1fr)
+	overflow: hidden
+.product-cont--five
+	+below(1024px)
+		grid-template-columns: repeat(4, 1fr)
+		margin: 30px 0
+	+below(640px)
+		grid-template-columns: repeat(3, 1fr)
+	+below(480px)
+		grid-template-columns: 1fr 1fr
+	grid-template-columns: repeat(5, 1fr)
+
+
+
+.product-footer
+	flex(between)
+	margin-top: 20px
+.product-price
+	+below(1200px)
+		font-size: 14px
+	+below(1024px)
+		font-size: 24px
+	+below(640px)
+		font-weight: 700
+	@extend .type--md
+	background-color #ffffff
+	font-weight 600
+
+.product-weight
+	margin-right auto
+	margin-left: 10px
+	@extend .type--sm
+	color $gray
+
+.product-add
+	+below(768px)
+		font-size: 12px
+	cp()
+	@extend .type--sm
+	tr(all)
+	width: 50%
+	text-align: center
+	@extend .btn--md
+	@extend .btn--light
+	padding: 5px 20px
+	flex(mid)
+	height: 40px
+	white-space nowrap
+	&:hover
+		background: $mark
+
+.product-el--add
+	br(10px)
+	padding: 5px 10px
+	flex(mid)
+	position absolute
+	top: 10px
+	right: 10px
+	z-index 10
+	background: $mark
+	color white
+	.icon
+		margin-right: 3px
+		size 16px
+		fill white
+
+.product-el--add-val
+	font-weight: 700
+	@extend .type--xs
+	font-weight 700
+// PRODUCT === end
+
+// size
+.size
+	display: grid
+	grid-gap 5px
+	grid-template-columns: repeat(auto-fit, minmax(3rem,1fr))
+	br(20px)
+	border 1px solid $gray-light
+
+.size--lg
+	br(30px)
+	.size__el
+		@extend .type--md
+		padding: 20px 10px
+		font-weight: 700
+		&:first-child
+			border-radius 30px 0 0 30px
+		&:last-child
+			border-radius 0 30px 30px 0
+
+.size--column
+	+below(640px)
+		fw()
+		.size__el
+			width: 100%
+			border-radius 30px!important
+
+.size--sm
+	display: inline-flex
+	.size__el
+		padding: 8px 20px
+
+
+.size--fluid
+	@extend .size--lg
+	f()
+	.size__el
+		flex-grow 1
+		font-weight: 700
+		font-size: 14px
+
+.size__el
+	+below(480px)
+		font-weight:700
+	cp()
+	tr()
+	font-size: 14px
+	padding: 10px
+	text-align: center
+	line-height: 1
+	&:first-child
+		border-radius 20px 0 0 20px
+	&:last-child
+		border-radius 0 20px 20px 0
+	&:hover
+		border-color $mark
+.size__el--active
+	background: $gray-light
+// size === end
+
+// sale-list
+.sale-list
+	display: grid
+	grid-gap 30px
+	grid-template-columns: repeat(auto-fill, minmax(25rem,1fr))
+.sale-list__el
+	f()
+
+.sale-list__el-img
+	bg-full()
+	padding: 10%
+	width: 35%
+	margin-right: 20px
+	br(20px)
+.sale-list__el-info
+	padding: 20px 0 0 0
+.sale-list__el-title
+	@extend .type--md
+	font-weight 700
+	margin-bottom: 10px
+	display inline-block
+// sale-list === end
+
+.icon-round
+	size 44px
+	flex(mid)
+	round()
+	tr()
+	.icon
+		tr()
+		size 14px
+.icon-round--mark
+	border 2px solid $mark
+	.icon
+		fill $mark
+	&:hover
+		background: $mark
+		.icon
+			fill white
+
+.section
+	margin: 50px 0
+
+.gallery
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
+.gallery__el
+	padding: 35% 10%
+	bg-full()
+	br(5px)
+
+.toggle-seo
+	cp()
+	.icon
+		tr()
+	.type--true
+		display none
+.toggle-seo.active
+	span
+		color $mark
+	.icon
+		tr()
+		transform rotate(180deg)
+	.type--true
+		display block
+	.type--false
+		display none
+
+
+// soc row
+.soc-row
+	f()
+.soc-row__el
+	round()
+	flex(mid)
+	tr(all)
+	margin-right: 10px
+	size 30px
+	background: black
+	&:hover
+		background: $mark
+	.icon
+		size 14px
+		fill white
+.soc-row__el--red
+	background: $red
+// soc row === end
+.footer-top-wrap
+	background: $snow
+.footer-top
+	//padding: 20px 0
+	f()
+	align-items center
+	justify-content space-between
+	min-height 80px
+//.footer-wrap
+//.main-cont
+//.footer-top
+.footer-payment
+	margin-right: 10px
+.footer-info
+	margin-right: 10px
+.footer-info__title
+	font-weight:700
+	margin-bottom: 5px
+.footer-info__text
+	color $gray
+	@extend .type--sm
+.footer-map
+	width: 20%
+	tr()
+	padding: 30px 35px
+	color white
+	text-align center
+	position relative
+	overflow hidden
+	span
+		position relative
+		z-index 5
+		color white!important
+		font-weight: 700
+	&:hover
+		.footer-map__el
+			transform scale(1.3)
+.footer-map__el
+	tr()
+	position absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	bg-full()
+.footer-main-wrap
+	background: $gray-light
+.footer-main
+	padding: 30px 0
+.footer-nav
+	flex(between)
+	margin-bottom: 30px
+.footer-nav__el
+	@extend .type--sm
+.footer-cont
+	flex(between)
+.footer-phone
+	font-weight:700
+
+//.footer-mail
+//.footer-loc
+//.icon
+.create
+	flex(mid)
+	span
+		@extend .type--sm
+		display inline-block
+		margin-right: 10px

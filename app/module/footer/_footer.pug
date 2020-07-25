@@ -1,3 +1,45 @@
 mixin footer()
 	//block footer
+	.footer-wrap
+		.footer-top-wrap
+			.main-cont
+				.footer-top
+					.footer-payment
+						img(src="img/payment.svg", alt="")
+					.footer-info
+						.footer-info__title 250 грн
+						.footer-info__text минимальная сумма доставки
+					.footer-info
+						.footer-info__title 42 минуты
+						.footer-info__text среднее время доставки
+					.footer-info
+						.footer-info__title бесплатная доставка
+						.footer-info__text при заказе на сумму свыше 500 грн
+					a(href="#" ).footer-map
+						span Зона доставки
+						.footer-map__el(style="background-image:url('img/map.jpg')")
+		.footer-main-wrap
+			.main-cont
+				.footer-main
+					.footer-nav
+						-
+							var items = [
+								'Акции','Доставка и оплата','Отзывы','О компании','Новости','Новости','Наши кафе','Карьера','Публичная оферта','Политика конфиденциальности'
+								];
+						each item in items
+							.footer-nav__el #{item}
+					.footer-cont
+						a(href="tel:8 800 563 56 56").footer-phone 8 800 563 56 56
+						a(href="mailto:pochta@gmail.com").footer-mail pochta@gmail.com
+						.footer-loc Чернівці, проспект Незалежності, 90
+						.soc-row
+							a(href="#").soc-row__el
+								+icon("soc-facebook","icon")
+							a(href="#").soc-row__el
+								+icon("soc-instagram","icon")
+							a(href="#").soc-row__el.soc-row__el--red
+								+icon("soc-telegram","icon")
+						a(href="#").create
+							span Создано в:
+							img(src="img/jq.svg", alt="")
 	//block footer end

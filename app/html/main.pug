@@ -3,25 +3,105 @@ include block_html/_include.pug
 
 .page
 	+header()
+	.slider-wrap.slider-wrap--main.slider-wrap--inarrow
+		.slider-control.slider-control--left
+			+icon("arrow-left-fat","icon")
+		.slider-control.slider-control--right
+			+icon("arrow-right-fat","icon")
+		.main-slider.slider-item
+			- for (var i=0;i<4;i++)
+				.main-slider__el-wrap
+					a(href="#" style="background-image:url('img/slide-1.jpg')").main-slider__el.main-slider__el--md
 	.content
 		.main-cont
+			.kind
+				a(href="#" style="background-image:url('img/kind-1.jpg')").kind__el
+					.kind__el-title Пицца
+				a(href="#" style="background-image:url('img/kind-2.jpg')").kind__el
+					.kind__el-title Суши
+				a(href="#" style="background-image:url('img/kind-3.jpg')").kind__el
+					.kind__el-title Салаты
+				a(href="#" style="background-image:url('img/kind-4.jpg')").kind__el
+					.kind__el-title Вторые блюда
+			.kind-sm
+				a(href="#" style="background-image:url('img/btn-bg-1.jpg')").kind__sm-el
+					span Соусы
+				a(href="#" style="background-image:url('img/btn-bg-2.jpg')").kind__sm-el
+					span Напитки
 
-		.incr-btn
-			.incr-btn__el.btn--md.btn--light В корзину
-			.incr-btn-wrap
-				+incr(1)
+			// popular
+			.title.title--xl.type--center Популярное
+			.product-cont
+				- for (var i=0;i< 8;i++)
+					+product()
+			.btn-row-mid
+				a(href="#").product-more.btn--sm.btn--light.btn--mobile показать еще
+			// popular === end
 
-			+incr(0,"incr--green-light incr--sm")
-			+incr(0,"incr--red")
-			+incr(0,"incr--green-light")
-			+incr(0,"incr--red-light")
+			// pizza
+			.title.title--xl.type--center Пицца
+			.product-cont
+				- for (var i=0;i< 4;i++)
+					+product("item-4.jpg")
+			.btn-row-mid
+				a(href="#").product-more.btn--sm.btn--light.btn--mobile показать еще
+			// pizza === end
 
-			.add.add--sm
-				+icon("plus","icon")
+			// pizza
+			.title.title--xl.type--center Салати
+			.product-cont
+				- for (var i=0;i< 4;i++)
+					+product("item-3.jpg")
+			.btn-row-mid
+				a(href="#").product-more.btn--sm.btn--light.btn--mobile показать еще
+			// pizza === end
 
-			hr
+			// sale-list
+			.section
+				.title.title--xl.type--center Акции
+				.sale-list
+					-
+						var items = [
+							'Скидка в день рождения!',
+							'Напиток в подарок!',
+							'Оновлена акція 1+1=3',
+							'29 хв/59 хв – або піца безкоштовно!'
+							];
+					each item,i in items
+						.sale-list__el
+							.sale-list__el-img(style="background-image:url('img/sale-el-"+(i+1)+".jpg')")
+							.sale-list__el-info
+								a(href="#").sale-list__el-title #{item}
+								a(href="#").icon-round.icon-round--mark
+									+icon("arrow-right-fat","icon")
+			// sale-list === end
 
+			//gallery
+			.section
+				.title.title--xl.type--center Ждем вас в наших кафе
+				.gallery
+					- for (var j=0;j<2;j++)
+						- for (var i=0;i<4;i++)
+							a(href="img/gallery"+(i+1)+".jpg" style="background-image:url('img/gallery-"+(i+1)+".jpg')").gallery__el.fancybox
 
-			+incr(false,"incr--single incr--green-light incr--sm")
+			//  === end
+
+			// seo text
+			.section
+				.title.title--xl Доставка суші та ролів в Чернівцях
+				.seo-text.text
+					p Замовляйте улюблені страви з доставкою прямо до дому!
+
+					p Протягом останнього десятиріччя в Україні небувалої популярності набули страви японської кухні. Майже у кожному місті та навіть селищі діє доставка на адресу замовника.
+
+					p Чому роли з океанічною рибою, овочами та японськими делікатесами стали улюбленою стравою багатьох українців? По-перше, це дуже корисно. Суші – це ідеально збалансована їжа, багата на корисні жири, білки та вітаміни. По-друге, суші добре втамовують голод. Врешті-решт, це нереально смачно!
+				.seo-text--add.js-commutator-cont.drop(data-item="seo")
+					p Чому роли з океанічною рибою, овочами та японськими делікатесами стали улюбленою стравою багатьох українців? По-перше, це дуже корисно. Суші – це ідеально збалансована їжа, багата на корисні жири, білки та вітаміни. По-друге, суші добре втамовують голод. Врешті-решт, це нереально смачно!
+					p Чому роли з океанічною рибою, овочами та японськими делікатесами стали улюбленою стравою багатьох українців? По-перше, це дуже корисно. Суші – це ідеально збалансована їжа, багата на корисні жири, білки та вітаміни.
+				.icon-row.toggle-seo.js-commutator-el(data-item="seo")
+					span.type--red.type--false Показати ще
+					span.type--red.type--true Скрыть ще
+					+icon("arrow-down","icon icon--sm icon--gray icon--left")
+			// seo text === end
 	+footer()
 include ./block_html/_script.pug

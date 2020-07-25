@@ -32,11 +32,12 @@
 	background:#1111119c
 
 .drop
-	transform: scaleY(0)
-	tr()
+	transition opacity .4s
 	transform-origin: top
 	opacity: 0
-
+	position absolute
+	left -9999px
 .drop.active
-	transform: scaleY(1)
 	opacity: 1
+	position: static
+	left initial

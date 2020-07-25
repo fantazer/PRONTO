@@ -33,3 +33,24 @@ mixin incr(state,className='')
       .incr__val-coner
     .incr__plus.incr__nav
       +icon("plus","icon")
+
+mixin product(img="item-1.jpg")
+  .product-el
+    .product-el--add
+      +icon("cart-empty","icon")
+      .product-el--add-val 2
+    a(href="#").product__img
+      .product__img-el(style="background-image:url('img/"+img+"')")
+    .product__cont
+      a(href="#").product__title Капрічоза
+      .product-box
+        .product__text Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда
+      .size
+        .size__el.size__el--active 15 см
+        .size__el 30 см
+        .size__el 45 см
+      .product-footer
+        .product-price 250 ₴
+        .product-weight 300 гр
+        .item-add
+          +incr(false,"incr--single incr--red-light ")

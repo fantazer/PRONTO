@@ -17,8 +17,9 @@
     <!--build:css ./css/vendor.css-->
     <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    <!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick.css")-->
-    <!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick-theme.css")-->
+    <link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower/fancybox/dist/jquery.fancybox.css" />
     <!--link(rel="stylesheet", href="bower/jquery-nice-select/css/nice-select.css")-->
     <!--link(rel="stylesheet", href="bower/ion.rangeSlider/css/ion.rangeSlider.css")-->
     <!--endbuild-->
@@ -29,123 +30,1020 @@
 <body>
     <div class="page">
         <!--block header-->
+        <div class="header-wrap">
+            <div class="header-top-wrap">
+                <div class="main-cont">
+                    <!-- header-top-->
+                    <div class="header-top icon-row">
+                        <div class="header-location">
+                            <svg class="icon icon--md icon--mark icon--right">
+                                <use xlink:href="#location"></use>
+                            </svg>
+                            <span>Івано-Франківськ</span>
+                        </div>
+                        <div class="header-work">
+                            <a class="phone icon-row" href="tel:8 800 434 45 34">
+                                <svg class="icon icon--md icon--gray icon--right">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                                <span>8 800 434 45 34</span>
+                            </a>
+                            <div class="header-work__time">с 10 до 20</div>
+                        </div>
+                        <div class="nav-top">
+                            <a class="nav-top__el" href="#">Акции</a>
+                            <a class="nav-top__el" href="#">Доставка и оплата</a>
+                            <a class="nav-top__el" href="#">Отзывы</a>
+                            <a class="nav-top__el" href="#">Кафе</a>
+                        </div>
+                        <div class="auth icon-row">
+                            <svg class="icon icon--md icon--gray icon--right">
+                                <use xlink:href="#user"></use>
+                            </svg>
+                            <span>Профиль</span>
+                        </div>
+                        <div class="lang">
+                            <a class="lang__el lang__el--active" href="#">Укр</a>
+                            <a class="lang__el" href="#">Eng</a>
+                            <a class="lang__el" href="#">Рус</a>
+                        </div>
+                    </div>
+                    <!-- header-top === end-->
+                </div>
+            </div>
+            <!-- main-header-->
+            <div class="main-cont">
+                <div class="header">
+                    <a class="logo" href="/">
+                        <img src="img/logo.svg" alt="" />
+                    </a>
+                    <div class="header-nav">
+                        <a class="header-nav__el header-nav__el--mark header-nav__el--green" href="#">Пицца</a>
+                        <a class="header-nav__el header-nav__el--mark header-nav__el--red" href="#">Суши</a>
+                        <a class="header-nav__el" href="#">Салаты</a>
+                        <a class="header-nav__el" href="#">Вторые блюда</a>
+                        <a class="header-nav__el" href="#">Соусы</a>
+                        <a class="header-nav__el" href="#">Напитки</a>
+                    </div>
+                    <a class="header-cart" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#cart"></use>
+                        </svg>
+                        <div class="header-cart__cost">1249 р</div>
+                        <div class="header-cart__size">5</div>
+                    </a>
+                </div>
+            </div>
+            <!-- main-header === end-->
+        </div>
         <!--block header end-->
+        <div class="slider-wrap slider-wrap--main slider-wrap--inarrow">
+            <div class="slider-control slider-control--left">
+                <svg class="icon">
+                    <use xlink:href="#arrow-left-fat"></use>
+                </svg>
+            </div>
+            <div class="slider-control slider-control--right">
+                <svg class="icon">
+                    <use xlink:href="#arrow-right-fat"></use>
+                </svg>
+            </div>
+            <div class="main-slider slider-item">
+                <div class="main-slider__el-wrap">
+                    <a class="main-slider__el main-slider__el--md" href="#" style="background-image:url('img/slide-1.jpg')"></a>
+                </div>
+                <div class="main-slider__el-wrap">
+                    <a class="main-slider__el main-slider__el--md" href="#" style="background-image:url('img/slide-1.jpg')"></a>
+                </div>
+                <div class="main-slider__el-wrap">
+                    <a class="main-slider__el main-slider__el--md" href="#" style="background-image:url('img/slide-1.jpg')"></a>
+                </div>
+                <div class="main-slider__el-wrap">
+                    <a class="main-slider__el main-slider__el--md" href="#" style="background-image:url('img/slide-1.jpg')"></a>
+                </div>
+            </div>
+        </div>
         <div class="content">
-            <div class="main-cont"></div>
-            <div class="incr-btn">
-                <div class="incr-btn__el btn--md btn--light">В корзину</div>
-                <div class="incr-btn-wrap">
-                    <div class="incr  incr--one">
-                        <div class="incr__minus incr__nav">
+            <div class="main-cont">
+                <div class="kind">
+                    <a class="kind__el" href="#" style="background-image:url('img/kind-1.jpg')">
+                        <div class="kind__el-title">Пицца</div>
+                    </a>
+                    <a class="kind__el" href="#" style="background-image:url('img/kind-2.jpg')">
+                        <div class="kind__el-title">Суши</div>
+                    </a>
+                    <a class="kind__el" href="#" style="background-image:url('img/kind-3.jpg')">
+                        <div class="kind__el-title">Салаты</div>
+                    </a>
+                    <a class="kind__el" href="#" style="background-image:url('img/kind-4.jpg')">
+                        <div class="kind__el-title">Вторые блюда</div>
+                    </a>
+                </div>
+                <div class="kind-sm">
+                    <a class="kind__sm-el" href="#" style="background-image:url('img/btn-bg-1.jpg')">
+                        <span>Соусы</span>
+                    </a>
+                    <a class="kind__sm-el" href="#" style="background-image:url('img/btn-bg-2.jpg')">
+                        <span>Напитки</span>
+                    </a>
+                </div>
+                <!-- popular-->
+                <div class="title title--xl type--center">Популярное</div>
+                <div class="product-cont">
+                    <div class="product-el">
+                        <div class="product-el--add">
                             <svg class="icon">
-                                <use xlink:href="#minus"></use>
+                                <use xlink:href="#cart-empty"></use>
                             </svg>
+                            <div class="product-el--add-val">2</div>
                         </div>
-                        <div class="incr__val">
-                            <span>1</span>
-                            <div class="incr__val-coner"></div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="incr__plus incr__nav">
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
                             <svg class="icon">
-                                <use xlink:href="#plus"></use>
+                                <use xlink:href="#cart-empty"></use>
                             </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-1.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="incr incr--green-light incr--sm">
-                    <div class="incr__minus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#minus"></use>
-                        </svg>
+                <div class="btn-row-mid">
+                    <a class="product-more btn--sm btn--light btn--mobile" href="#">показать еще</a>
+                </div>
+                <!-- popular === end-->
+                <!-- pizza-->
+                <div class="title title--xl type--center">Пицца</div>
+                <div class="product-cont">
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-4.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="incr__val">
-                        <span>0</span>
-                        <div class="incr__val-coner"></div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-4.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="incr__plus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#plus"></use>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-4.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-4.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-row-mid">
+                    <a class="product-more btn--sm btn--light btn--mobile" href="#">показать еще</a>
+                </div>
+                <!-- pizza === end-->
+                <!-- pizza-->
+                <div class="title title--xl type--center">Салати</div>
+                <div class="product-cont">
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-3.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-3.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-3.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-el">
+                        <div class="product-el--add">
+                            <svg class="icon">
+                                <use xlink:href="#cart-empty"></use>
+                            </svg>
+                            <div class="product-el--add-val">2</div>
+                        </div>
+                        <a class="product__img" href="#">
+                            <div class="product__img-el" style="background-image:url('img/item-3.jpg')"></div>
+                        </a>
+                        <div class="product__cont">
+                            <a class="product__title" href="#">Капрічоза</a>
+                            <div class="product-box">
+                                <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
+                            </div>
+                            <div class="size">
+                                <div class="size__el size__el--active">15 см</div>
+                                <div class="size__el">30 см</div>
+                                <div class="size__el">45 см</div>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">250 ₴</div>
+                                <div class="product-weight">300 гр</div>
+                                <div class="item-add">
+                                    <div class="incr incr--single incr--red-light ">
+                                        <div class="incr__minus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="incr__val">
+                                            <span>0</span>
+                                            <div class="incr__val-coner"></div>
+                                        </div>
+                                        <div class="incr__plus incr__nav">
+                                            <svg class="icon">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-row-mid">
+                    <a class="product-more btn--sm btn--light btn--mobile" href="#">показать еще</a>
+                </div>
+                <!-- pizza === end-->
+                <!-- sale-list-->
+                <div class="section">
+                    <div class="title title--xl type--center">Акции</div>
+                    <div class="sale-list">
+                        <div class="sale-list__el">
+                            <div class="sale-list__el-img" style="background-image:url('img/sale-el-1.jpg')"></div>
+                            <div class="sale-list__el-info">
+                                <a class="sale-list__el-title" href="#">Скидка в день рождения!</a>
+                                <a class="icon-round icon-round--mark" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#arrow-right-fat"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sale-list__el">
+                            <div class="sale-list__el-img" style="background-image:url('img/sale-el-2.jpg')"></div>
+                            <div class="sale-list__el-info">
+                                <a class="sale-list__el-title" href="#">Напиток в подарок!</a>
+                                <a class="icon-round icon-round--mark" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#arrow-right-fat"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sale-list__el">
+                            <div class="sale-list__el-img" style="background-image:url('img/sale-el-3.jpg')"></div>
+                            <div class="sale-list__el-info">
+                                <a class="sale-list__el-title" href="#">Оновлена акція 1+1=3</a>
+                                <a class="icon-round icon-round--mark" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#arrow-right-fat"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sale-list__el">
+                            <div class="sale-list__el-img" style="background-image:url('img/sale-el-4.jpg')"></div>
+                            <div class="sale-list__el-info">
+                                <a class="sale-list__el-title" href="#">29 хв/59 хв – або піца безкоштовно!</a>
+                                <a class="icon-round icon-round--mark" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#arrow-right-fat"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sale-list === end-->
+                <!--gallery-->
+                <div class="section">
+                    <div class="title title--xl type--center">Ждем вас в наших кафе</div>
+                    <div class="gallery">
+                        <a class="gallery__el fancybox" href="img/gallery1.jpg" style="background-image:url('img/gallery-1.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery2.jpg" style="background-image:url('img/gallery-2.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery3.jpg" style="background-image:url('img/gallery-3.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery4.jpg" style="background-image:url('img/gallery-4.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery1.jpg" style="background-image:url('img/gallery-1.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery2.jpg" style="background-image:url('img/gallery-2.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery3.jpg" style="background-image:url('img/gallery-3.jpg')"></a>
+                        <a class="gallery__el fancybox" href="img/gallery4.jpg" style="background-image:url('img/gallery-4.jpg')"></a>
+                    </div>
+                </div>
+                <!--  === end-->
+                <!-- seo text-->
+                <div class="section">
+                    <div class="title title--xl">Доставка суші та ролів в Чернівцях</div>
+                    <div class="seo-text text">
+                        <p>Замовляйте улюблені страви з доставкою прямо до дому!</p>
+                        <p>Протягом останнього десятиріччя в Україні небувалої популярності набули страви японської кухні. Майже у кожному місті та навіть селищі діє доставка на адресу замовника.</p>
+                        <p>Чому роли з океанічною рибою, овочами та японськими делікатесами стали улюбленою стравою багатьох українців? По-перше, це дуже корисно. Суші – це ідеально збалансована їжа, багата на корисні жири, білки та вітаміни. По-друге, суші
+                            добре втамовують голод. Врешті-решт, це нереально смачно!</p>
+                    </div>
+                    <div class="seo-text--add js-commutator-cont drop" data-item="seo">
+                        <p>Чому роли з океанічною рибою, овочами та японськими делікатесами стали улюбленою стравою багатьох українців? По-перше, це дуже корисно. Суші – це ідеально збалансована їжа, багата на корисні жири, білки та вітаміни. По-друге, суші
+                            добре втамовують голод. Врешті-решт, це нереально смачно!</p>
+                        <p>Чому роли з океанічною рибою, овочами та японськими делікатесами стали улюбленою стравою багатьох українців? По-перше, це дуже корисно. Суші – це ідеально збалансована їжа, багата на корисні жири, білки та вітаміни.</p>
+                    </div>
+                    <div class="icon-row toggle-seo js-commutator-el" data-item="seo">
+                        <span class="type--red type--false">Показати ще</span>
+                        <span class="type--red type--true">Скрыть ще</span>
+                        <svg class="icon icon--sm icon--gray icon--left">
+                            <use xlink:href="#arrow-down"></use>
                         </svg>
                     </div>
                 </div>
-                <div class="incr incr--red">
-                    <div class="incr__minus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#minus"></use>
-                        </svg>
-                    </div>
-                    <div class="incr__val">
-                        <span>0</span>
-                        <div class="incr__val-coner"></div>
-                    </div>
-                    <div class="incr__plus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#plus"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="incr incr--green-light">
-                    <div class="incr__minus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#minus"></use>
-                        </svg>
-                    </div>
-                    <div class="incr__val">
-                        <span>0</span>
-                        <div class="incr__val-coner"></div>
-                    </div>
-                    <div class="incr__plus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#plus"></use>
-                        </svg>
+                <!-- seo text === end-->
+            </div>
+        </div>
+        <!--block footer-->
+        <div class="footer-wrap">
+            <div class="footer-top-wrap">
+                <div class="main-cont">
+                    <div class="footer-top">
+                        <div class="footer-payment">
+                            <img src="img/payment.svg" alt="" />
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info__title">250 грн</div>
+                            <div class="footer-info__text">минимальная сумма доставки</div>
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info__title">42 минуты</div>
+                            <div class="footer-info__text">среднее время доставки</div>
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info__title">бесплатная доставка</div>
+                            <div class="footer-info__text">при заказе на сумму свыше 500 грн</div>
+                        </div>
+                        <a class="footer-map" href="#">
+                            <span>Зона доставки</span>
+                            <div class="footer-map__el" style="background-image:url('img/map.jpg')"></div>
+                        </a>
                     </div>
                 </div>
-                <div class="incr incr--red-light">
-                    <div class="incr__minus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#minus"></use>
-                        </svg>
-                    </div>
-                    <div class="incr__val">
-                        <span>0</span>
-                        <div class="incr__val-coner"></div>
-                    </div>
-                    <div class="incr__plus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#plus"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="add add--sm">
-                    <svg class="icon">
-                        <use xlink:href="#plus"></use>
-                    </svg>
-                </div>
-                <hr/>
-                <div class="incr incr--single incr--green-light incr--sm">
-                    <div class="incr__minus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#minus"></use>
-                        </svg>
-                    </div>
-                    <div class="incr__val">
-                        <span>0</span>
-                        <div class="incr__val-coner"></div>
-                    </div>
-                    <div class="incr__plus incr__nav">
-                        <svg class="icon">
-                            <use xlink:href="#plus"></use>
-                        </svg>
+            </div>
+            <div class="footer-main-wrap">
+                <div class="main-cont">
+                    <div class="footer-main">
+                        <div class="footer-nav">
+                            <div class="footer-nav__el">Акции</div>
+                            <div class="footer-nav__el">Доставка и оплата</div>
+                            <div class="footer-nav__el">Отзывы</div>
+                            <div class="footer-nav__el">О компании</div>
+                            <div class="footer-nav__el">Новости</div>
+                            <div class="footer-nav__el">Новости</div>
+                            <div class="footer-nav__el">Наши кафе</div>
+                            <div class="footer-nav__el">Карьера</div>
+                            <div class="footer-nav__el">Публичная оферта</div>
+                            <div class="footer-nav__el">Политика конфиденциальности</div>
+                        </div>
+                        <div class="footer-cont">
+                            <a class="footer-phone" href="tel:8 800 563 56 56">8 800 563 56 56</a>
+                            <a class="footer-mail" href="mailto:pochta@gmail.com">pochta@gmail.com</a>
+                            <div class="footer-loc">Чернівці, проспект Незалежності, 90</div>
+                            <div class="soc-row">
+                                <a class="soc-row__el" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#soc-facebook"></use>
+                                    </svg>
+                                </a>
+                                <a class="soc-row__el" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#soc-instagram"></use>
+                                    </svg>
+                                </a>
+                                <a class="soc-row__el soc-row__el--red" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#soc-telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <a class="create" href="#">
+                                <span>Создано в:</span>
+                                <img src="img/jq.svg" alt="" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--block footer-->
         <!--block footer end-->
     </div>
     <!--build:js ./js/combined.js-->
     <script src="bower/jquery/dist/jquery.js"></script>
-    <!--script(src='bower/slick-carousel/slick/slick.js')-->
+    <script src="bower/slick-carousel/slick/slick.js"></script>
+    <script src="bower/fancybox/dist/jquery.fancybox.js"></script>
     <!--script(src='bower/jquery.nicescroll/jquery.nicescroll.min.js')-->
     <!--script(src='bower/jquery-nice-select/js/jquery.nice-select.min.js')-->
     <!--script(src="bower/ion.rangeSlider/js/ion.rangeSlider.js")-->

@@ -1,3 +1,47 @@
 mixin header()
 	//block header
+	.header-wrap
+		.header-top-wrap
+			.main-cont
+				// header-top
+				.header-top.icon-row
+					.header-location
+						+icon("location","icon icon--md icon--mark icon--right")
+						span Івано-Франківськ
+					.header-work
+						a(href="tel:8 800 434 45 34").phone.icon-row
+							+icon("phone","icon icon--md icon--gray icon--right")
+							span 8 800 434 45 34
+						.header-work__time с 10 до 20
+					.nav-top
+						a(href="#").nav-top__el Акции
+						a(href="#").nav-top__el Доставка и оплата
+						a(href="#").nav-top__el Отзывы
+						a(href="#").nav-top__el Кафе
+					.auth.icon-row
+						+icon("user","icon icon--md icon--gray icon--right")
+						span Профиль
+					.lang
+						a(href="#").lang__el.lang__el--active Укр
+						a(href="#").lang__el Eng
+						a(href="#").lang__el Рус
+				// header-top === end
+		// main-header
+		.main-cont
+			.header
+				a(href="/").logo
+					img(src="img/logo.svg", alt="")
+				.header-nav
+					a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
+					a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши
+					a(href="#").header-nav__el Салаты
+					a(href="#").header-nav__el Вторые блюда
+					a(href="#").header-nav__el Соусы
+					a(href="#").header-nav__el Напитки
+				a(href="#").header-cart
+					+icon("cart","icon")
+					.header-cart__cost 1249 р
+					.header-cart__size 5
+
+		// main-header === end
 	//block header end
