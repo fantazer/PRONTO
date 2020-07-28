@@ -24,9 +24,36 @@ body
 	fl()
 	min-height 100vh
 
+.page--dark
+	.content
+		background: #f8f8f8
+	.header-wrap
+		background: #393939
+		color white
+		a
+			color white
+			&:hover
+				color $mark
+	.header-nav__el--red
+		&:hover
+			color $carrot!important
+	.header-top-wrap
+		background: #2a2a2a
+	.footer-wrap
+		color white
+		a
+			color white
+			&:hover
+				color $mark
+	.footer-top-wrap
+		background: #393939
+	.footer-main-wrap
+		background: #2a2a2a
+	.shrink
+		box-shadow none
 .content
 	flex-grow 1
-
+	padding: 30px 0 100px 0
 .content--mid
 	flex(mid)
 
@@ -611,9 +638,26 @@ body
 
 
 // PRODUCT
+.product-descr
+	text-align center
+	margin: 30px auto
+	@extend .type--sm
+	max-width 640px
+	line-height: 1.6
+
+.product-filter
+	margin: 10px auto
+	max-width 768px
+	flex(mid)
+	fw()
+	.btn--sm
+		margin: 10px
+
 .product-el
-	background-color #ffffff
+	br(25px)
 	tr(all)
+	overflow: hidden
+	background-color #ffffff
 	position: relative
 	f()
 	fl()
@@ -633,18 +677,20 @@ body
 
 
 .product__img
-	margin-bottom: 20px
 	flex(mid)
 	img
 		margin: 0 auto
 		tr(all)
 		width: 100%
 
+.product__img--lg
+	.product__img-el
+		padding: 35% 10%
 .product__cont
 	f()
 	fl()
 	flex-grow 1
-
+	padding: 20px 18px
 .product__img-el
 	tr(all)
 	width: 100%
@@ -652,9 +698,9 @@ body
 	bg-full()
 	background-size: cover
 	padding: 50% 10%
-	br(20px)
+	br(25px)
 .product__title
-	margin-bottom: 20px
+	margin-bottom: 10px
 	color $dark
 	tr(all)
 	@extend .type--md
@@ -698,8 +744,8 @@ body
 		grid-template-columns: 1fr 1fr
 	grid-template-columns: repeat(5, 1fr)
 
-
-
+.product-cont--three
+	grid-template-columns: repeat(auto-fill, minmax(20rem,1fr))
 .product-footer
 	flex(between)
 	margin-top: 20px
@@ -713,12 +759,13 @@ body
 	@extend .type--md
 	background-color #ffffff
 	font-weight 600
-
+	white-space nowrap
 .product-weight
 	margin-right auto
 	margin-left: 10px
 	@extend .type--sm
 	color $gray
+	white-space nowrap
 
 .product-add
 	+below(768px)
@@ -756,15 +803,103 @@ body
 	font-weight: 700
 	@extend .type--xs
 	font-weight 700
+
+// product slider
+.product-slide
+	position absolute
+	top 0
+	left 0
+	width: 100%
+	height: calc(100% - 60px)
+	background: white
+	z-index 25
+	transform translateX(100%)
+	tr()
+.product-slide.active
+	transform translateX(0)
+
+.product-slide-wrap
+	position relative
+	padding: 60px 20px 20px 20px
+	height: 100%
+
+.product-slide__close
+	position absolute
+	size 60px
+	top 0
+	right: 0
+	flex(mid)
+	cp()
+	tr()
+	background-color $gray-light
+	border-radius 0 25px 0 60px
+	z-index 30
+	&:hover
+		background: $gray
+	.icon
+		size 12px
+		margin-top: -5px
+		margin-right: -10px
+
+.product-slide__list
+	.check-el
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+	.style-label
+		align-items: flex-start
+.product-slide__title
+	text-align center
+	@extend .type--md
+	font-weight: 700
+	margin-bottom: 20px
+.product-slide__info
+	width: 100%
+	f()
+	justify-content space-between
+	align-items: flex-start
+	@extend .type--sm
+	font-weight 700
+	.incr__val
+		font-size: 16px
+		padding: 0 10px
+
+.product-slide__text
+	text-align center
+	@extend .type--sm
+	margin-top: -10px
+	margin-bottom: 20px
+	color $gray
+
+.product-slide__row
+	padding: 10px 0
+	border-top 1px solid $border-color
+	border-bottom 1px solid $border-color
+	margin-top: -1px
+	.product-slide__info
+		align-items center
+		margin-top: 10px
+// product slider === end
+
 // PRODUCT === end
 
 // size
 .size
 	display: grid
-	grid-gap 5px
+	grid-gap 0
 	grid-template-columns: repeat(auto-fit, minmax(3rem,1fr))
 	br(20px)
 	border 1px solid $gray-light
+
+.size--mark
+	border 1px solid $mark
+	.size__el--active
+		background: $mark
+		color white
+	.size__el
+		border-right 1px solid $mark
+		&:last-child
+			border 0
 
 .size--lg
 	br(30px)
@@ -832,6 +967,7 @@ body
 	margin-right: 20px
 	br(20px)
 .sale-list__el-info
+	width calc(100% - 35% - 20px)
 	padding: 20px 0 0 0
 .sale-list__el-title
 	@extend .type--md
@@ -973,3 +1109,288 @@ body
 		@extend .type--sm
 		display inline-block
 		margin-right: 10px
+
+.product-conf
+	f()
+	align-items center
+	margin-bottom: 15px
+.product-conf__el
+	f()
+	align-items center
+	margin-right: 10px
+	cp()
+	.icon
+		size 12px
+		fill $mark
+		margin-right: 5px
+		tr()
+	span
+		tr()
+		font-size: 14px
+	&:hover
+		span
+			color $mark
+		.icon
+			transform rotate(180deg)
+
+// bread
+.bread
+	+below(640px)
+		display: none
+	f()
+	fw()
+	padding: 20px 0
+ 
+.bread__el
+	margin-right: 15px
+	margin-bottom: 10px
+	position: relative
+	@extend .type--sm
+	&:after
+		content '/'
+		position: absolute
+		right: -10px
+		top 0
+	&:last-child
+		color $gray
+		&:after
+			content ''
+			display: none
+// bread === end
+
+// structure
+.structure
+	+below(480px)
+		grid-template-columns: repeat(2, 1fr)
+	display: grid
+	grid-gap 10px
+	grid-template-columns: repeat(4, 1fr)
+	margin-bottom: 10px
+.structure-wrap
+	max-width 400px
+.structure__el
+	padding: 10px 5px
+	border 1px solid $border-color
+	br(20px)
+	flex(mid)
+	fl()
+.structure__el-name
+	@extend .type--xs
+
+.structure-text
+	+below(480px)
+		text-align center
+	text-align: right
+	@extend .type--xs
+	margin-bottom: 30px
+// structure === end
+
+.item-wrap
+	f()
+	justify-content space-between
+	align-items: flex-start
+	margin-bottom: 50px
+.item-col
+	width: 45%
+.item-img
+	bg-full()
+	padding: 50% 10%
+	br(30px)
+.item-info
+	width calc(55% - 50px)
+.item-descr
+	margin-bottom: 10px
+	line-height: 1.6
+.item-size
+	margin-bottom: 20px
+.item-config-row
+	margin-bottom: 30px
+.item-prop
+	br(10px)
+	overflow hidden
+	background: white
+	margin-bottom: 10px
+	padding-right: 20px
+	f()
+	cp()
+	align-items center
+	justify-content space-between
+	&:last-child
+		margin-bottom: 0
+.item-prop__img
+	width: 70px
+	height: 60px
+	bg-full()
+	margin-right: 20px
+.item-prop__title
+	@extend .type--sm
+	font-weight 700
+	margin-right auto
+.item-prop__cost
+	@extend .type--sm
+	font-weight 700
+.item-prop__incr
+	margin-right: 20px
+.ingr-row
+	f()
+	align-items center
+	justify-content space-between
+	padding: 10px 0
+	border-bottom 1px solid $border-color
+	@extend .type--sm
+	&:first-child
+		padding-top: 0
+
+.ingr-row--clear
+	padding: 0
+	margin-bottom: 15px
+	border 0
+	
+.ingr-name
+	width: 50%
+.ingr-cost
+	width: 10%
+	color $gray
+//.ingr-total
+.item-total
+	f()
+	align-items center
+	margin-bottom: 40px
+	margin-top: 30px
+.item-total-wrap
+	margin-right: 30px
+.item-total__info
+	@extend .type--sm
+	margin-bottom: 5px
+.item-total__cond
+	f()
+	align-items: flex-end
+.item-total__cost
+	@extend .type--lg
+	font-weight 700
+	line-height: 1
+	margin-right: 10px
+//.item-total__weight
+.item-get
+	margin-right: 20px
+
+
+// construct
+.constr-wrap
+	f()
+	justify-content space-between
+	align-items: flex-start
+	margin-bottom: 50px
+.constr-col
+	width: 30%
+.constr-img
+	bg-full()
+	padding: 16% 10%
+	br(30px)
+	margin-bottom: 20px
+.constr-info
+	width calc(70% - 80px)
+.constr-descr
+	margin-bottom: 30px
+	line-height: 1.6
+.constr-size
+	margin-bottom: 20px
+.constr-config-row
+	margin-bottom: 30px
+
+.constr-prop-wrap
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(8rem,1fr))
+.constr-prop
+	br(10px)
+	cp()
+	tr()
+	overflow hidden
+	background: white
+	border 1px solid transparent
+	&:last-child
+		margin-bottom: 0
+	&:hover
+		border 1px solid $mark
+.constr-prop.active
+	border 1px solid $mark
+	.constr-incr
+		transform translateY(0%)
+.constr-prop-cont
+	padding: 20px 15px
+	width: 100%
+.constr-prop__img
+	padding: 40% 40%
+	bg-full()
+	position relative
+.constr-incr
+	position absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+	flex(mid)
+	tr()
+	background: #ffffffb5
+	transform translateY(-100%)
+
+.constr-prop__title
+	@extend .type--sm
+	font-weight 700
+	margin-right auto
+	width: 100%
+	margin-bottom: 5px
+.constr-prop__cost
+	@extend .type--sm
+	font-weight 700
+.constr-prop__incr
+	margin-right: 20px
+// construct === end
+
+.item-config-total
+	padding-top: 20px
+	border-top 1px solid $border-color
+	flex(between)
+	margin-bottom: 10px
+.item-config-total__text
+	@extend .type--md
+	font-weight 700
+.item-config-total__val
+	@extend .type--lg
+	font-weight 700
+
+.item-config-get
+	margin-bottom: 20px
+
+.item-config-add
+	f()
+	align-items center
+	.icon
+		size 24px
+		margin-right: 10px
+		fill $mark
+		tr()
+		&:hover
+			fill lighten($mark,10)
+	span
+		display inline-block
+		@extend .type--sm
+		width calc(100% - 20px)
+
+.warning
+	f()
+	align-items center
+	margin: 20px 0
+	.icon
+		size 28px
+		margin-right: 20px
+		fill $red
+		tr()
+		&:hover
+			fill lighten($red,10)
+	span
+		color $red
+		display inline-block
+		font-size: 12px
+		width calc(100% - 20px)

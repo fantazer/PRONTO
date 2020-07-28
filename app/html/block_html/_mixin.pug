@@ -34,23 +34,108 @@ mixin incr(state,className='')
     .incr__plus.incr__nav
       +icon("plus","icon")
 
-mixin product(img="item-1.jpg")
-  .product-el
+mixin bread()
+  .bread
+    a(href="#").bread__el Главная
+    a(href="#").bread__el Категория
+    .bread__el Товар
+
+mixin product(img="item-1.jpg",size)
+  .product-el.js-switch-parrent
     .product-el--add
       +icon("cart-empty","icon")
       .product-el--add-val 2
-    a(href="#").product__img
+    a(href="#" class = size? "product__img--lg":'').product__img
       .product__img-el(style="background-image:url('img/"+img+"')")
     .product__cont
       a(href="#").product__title Капрічоза
       .product-box
         .product__text Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда
+      .product-conf
+        .product-conf__el.js-switch(data-item="border" )
+          +icon("plus","icon")
+          span бортик
+        .product-conf__el.js-switch(data-item="sauce" )
+          +icon("plus","icon")
+          span соус
       .size
         .size__el.size__el--active 15 см
         .size__el 30 см
         .size__el 45 см
       .product-footer
         .product-price 250 ₴
-        .product-weight 300 гр
+        //.product-weight 300 гр
         .item-add
-          +incr(false,"incr--single incr--red-light ")
+          +incr(false,"incr--single incr--mark-light ")
+    .product-slide.js-switch-cont(data-item="border")
+      .product-slide-wrap
+        .product-slide__close.js-product-slide__close
+          +icon("close","icon")
+        .product-slide__title Добавить бортик
+        form.product-slide__list
+          .check-el
+            label.style-label.style-label--radio
+              input(type="radio" name="border" checked).style-input
+              .style-input-element
+                .icon-radio
+              .style-input-text
+                .product-slide__info
+                  .product-slide__val Звичайний бортик
+                  .product-slide__cost 0 ₴
+          .check-el
+            label.style-label.style-label--radio
+              input(type="radio" name="border" ).style-input
+              .style-input-element
+                .icon-radio
+              .style-input-text
+                .product-slide__info
+                  .product-slide__val Сирний бортик
+                  .product-slide__cost 29 ₴
+          .check-el
+            label.style-label.style-label--radio
+              input(type="radio" name="border" ).style-input
+              .style-input-element
+                .icon-radio
+              .style-input-text
+                .product-slide__info
+                  .product-slide__val Мисливський бортик
+                  .product-slide__cost 34 ₴
+    .product-slide.js-switch-cont(data-item="sauce")
+      .product-slide-wrap
+        .product-slide__close.js-product-slide__close
+          +icon("close","icon")
+        .product-slide__title Добавить соус
+        .product-slide__text соус идёт отдельно от пиццы
+        form.product-slide__list
+          .product-slide__row
+            .type--sm.type--bold Томатний соус <span class="type--gray">/ 50г</span>
+            .product-slide__info
+              .product-slide__val
+                +incr(false,"incr--mark-light incr--sm")
+              .product-slide__cost 0 ₴
+          .product-slide__row
+            .type--sm.type--bold Вершковий соус <span class="type--gray">/ 50г</span>
+            .product-slide__info
+              .product-slide__val
+                +incr(false,"incr--mark-light incr--sm")
+              .product-slide__cost 0 ₴
+          .product-slide__row
+            .type--sm.type--bold Часниковий <span class="type--gray">/ 50г</span>
+            .product-slide__info
+              .product-slide__val
+                +incr(false,"incr--mark-light incr--sm")
+              .product-slide__cost 0 ₴
+
+mixin product-sm(img="item-1.jpg",size)
+  .product-el.js-switch-parrent
+    .product-el--add
+      +icon("cart-empty","icon")
+      .product-el--add-val 2
+    a(href="#" class = size? "product__img--lg":'').product__img
+      .product__img-el(style="background-image:url('img/"+img+"')")
+    .product__cont
+      a(href="#").product__title Капрічоза
+      .product-footer
+        .product-price 250 ₴
+        .item-add
+          +incr(false,"incr--single incr--mark-light ")

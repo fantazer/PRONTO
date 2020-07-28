@@ -1,0 +1,26 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--dark
+	+header("dark")
+	.content
+		.main-cont
+			+bread()
+			//pizza
+			.title.title--xl.type--center Пицца
+			.product-cont
+				- for (var i=0;i< 7;i++)
+					+product("item-1.jpg")
+				.product-el
+					.product__img
+						.product__img-el(style="background-image:url('img/item-bg.jpg')")
+					.product__cont
+						a(href="#").product__title Создай свою пиццу
+						.product-box
+							.product__text Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда
+						.product-footer
+							a(href="#").btn--md.btn--full.btn--mark.btn--bottom Создать пиццу
+
+			// pizza === end
+	+footer("dark")
+include ./block_html/_script.pug

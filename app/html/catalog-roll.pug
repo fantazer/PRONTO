@@ -1,0 +1,38 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--dark
+	+header("dark")
+	.content
+		.main-cont
+			+bread()
+			//pizza
+			.title.title--xl.type--center Суши
+			.product-filter
+				-
+					var items = [
+						'Ура маки','Футо маки','Набори суші','Нігірі','Хосомакі'
+						];
+				each item in items
+					.btn--sm.btn--empty #{item}
+
+			.title.title--xl.type--center Ура маки
+			.product-descr Роли загорнені в рис з листочком норі та начинкою в середині (8 штук)
+			.product-cont
+				- for (var i=0;i< 7;i++)
+					+product("item-2.jpg")
+
+			.title.title--xl.type--center Набори суші
+			.product-cont.product-cont--three
+				- for (var i=0;i< 6;i++)
+					+product("item-5.jpg","lg")
+
+			.title.title--xl.type--center Нігірі
+			.product-descr Подовжені кульки рису з соусом, покриті шматочками риби. внутрішню частину риби ми змащуємо васабі, для більш насиченого смаку.
+			.product-cont
+				- for (var i=0;i< 7;i++)
+					+product("item-2.jpg")
+
+			// pizza === end
+	+footer("dark")
+include ./block_html/_script.pug

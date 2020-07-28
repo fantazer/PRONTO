@@ -120,12 +120,12 @@ $(document).ready(function () {
 		var parrent = $(this).closest(".js-switch-parrent");
 		$(this).toggleClass("active")
 		var selector;
-		selector = $(".js-switch[data-item=" + thisItem + "")
+		selector = $(".js-switch[data-item=" + thisItem + "]")
 		if(isEach){
 			selector.not(this).removeClass('active')
 			selector.not(this).closest(".js-switch-parrent").find(".js-switch-cont").removeClass('active')
 		}
-		parrent.find(".js-switch-cont").toggleClass('active')
+		parrent.find(".js-switch-cont[data-item=" + thisItem + "]").toggleClass('active')
 	})
 	//toggle class + parent === end
 
@@ -228,5 +228,16 @@ $(document).ready(function () {
 	});
 	// toggle size items === end
 
+	// toggle product slide
+	$('.js-product-slide__close').click(function(){
+		$(this).closest(".product-slide").removeClass("active")
+	});
+	// toggle product slide === end
 
+
+	// constructor
+	$('.constr-prop').click(function(){
+		$(this).toggleClass("active")
+	});
+	// constructor === end
 });

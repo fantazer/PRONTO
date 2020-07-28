@@ -64,6 +64,9 @@ font-size 40px
 .type--center
 	text-align center
 
+.type--gray
+	color $gray
+
 .title
 	margin-bottom: 30px
 	font-weight: 700
@@ -83,6 +86,8 @@ font-size 40px
 .title--xl
 	@extend .type--xl
 
+.title--clear
+	margin-bottom: 10px
 h5
 	@extend .type--sm
 h4
@@ -145,13 +150,16 @@ p
 	f()
 	fw()
 	align-items center
+.icon-row--clear
+	flex-wrap nowrap
 
 .icon--sm
 	size 16px
 
 .icon--md
 	size 24px
-
+.icon--lg
+	size 30px
 .icon--left
 	margin-left: 10px
 
@@ -160,6 +168,9 @@ p
 
 .icon--mark
 	fill $mark
+
+.icon--red
+	fill $carrot
 
 .icon--gray
 	fill $gray

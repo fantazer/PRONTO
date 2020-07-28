@@ -84,6 +84,15 @@
 	.nav-icon
 		fill $mark
 
+.btn--empty
+	@extend .btn
+	border 1px solid $border-color
+	&:hover
+		border 1px solid $mark
+		color $mark
+	.nav-icon
+		fill $mark
+
 .btn--white
 	@extend .btn
 	border 1px solid rgba(255, 255, 255, 0.9)
@@ -112,7 +121,9 @@
 .btn--full
 	width: 100%
 	display block
-
+	padding: 18px 10px
+.btn--bottom
+	border-radius 0 0 10px 10px
 // incr
 .incr
 	f()
@@ -137,7 +148,7 @@
 		background-color darken($mark,10)
 .incr__val
 	flex(mid)
-	background white
+	//background white
 	position relative
 	tr(all)
 	padding: 0 15px
@@ -197,7 +208,15 @@
 		size 24px
 		.icon
 			size 10px
-
+	.incr__val
+		padding: 0 10px
+.incr--mdx
+	.incr__nav
+		size 32px
+		.icon
+			size 12px
+	.incr__val
+		padding: 0 10px
 
 // Переключение с кнопки на инкремент
 .incr-btn
@@ -230,6 +249,20 @@
 
 
 // incr === end
+
+.incr--single
+	.incr__val
+		opacity 0
+		transition none
+	.incr__minus
+		opacity 0
+
+.incr--single-active
+	.incr__val
+		opacity 1
+
+	.incr__minus
+		opacity 1
 
 .incr--single
 	.incr__val

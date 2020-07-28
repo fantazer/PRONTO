@@ -1,11 +1,14 @@
-mixin footer()
+mixin footer(type)
 	//block footer
 	.footer-wrap
 		.footer-top-wrap
 			.main-cont
 				.footer-top
 					.footer-payment
-						img(src="img/payment.svg", alt="")
+						if(type)
+							img(src="img/payment--white.svg", alt="")
+						else
+							img(src="img/payment.svg", alt="")
 					.footer-info
 						.footer-info__title 250 грн
 						.footer-info__text минимальная сумма доставки
@@ -27,7 +30,7 @@ mixin footer()
 								'Акции','Доставка и оплата','Отзывы','О компании','Новости','Новости','Наши кафе','Карьера','Публичная оферта','Политика конфиденциальности'
 								];
 						each item in items
-							.footer-nav__el #{item}
+							a(href="#").footer-nav__el #{item}
 					.footer-cont
 						a(href="tel:8 800 563 56 56").footer-phone 8 800 563 56 56
 						a(href="mailto:pochta@gmail.com").footer-mail pochta@gmail.com

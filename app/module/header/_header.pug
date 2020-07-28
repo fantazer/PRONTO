@@ -1,4 +1,4 @@
-mixin header()
+mixin header(type)
 	//block header
 	.header-wrap
 		.header-top-wrap
@@ -30,7 +30,10 @@ mixin header()
 		.main-cont
 			.header
 				a(href="/").logo
-					img(src="img/logo.svg", alt="")
+					if(type)
+						img(src="img/logo--white.svg", alt="")
+					else
+						img(src="img/logo.svg", alt="")
 				.header-nav
 					a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
 					a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши

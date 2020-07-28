@@ -1,0 +1,56 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--dark
+	+header("dark")
+	.content
+		.main-cont
+			+bread()
+			.item-wrap
+				.item-col
+					.item-img(style="background-image:url('img/item-card-2.jpg')")
+				// item info
+				.item-info
+					.title.title--xl.title--clear Гриль Сальмон
+					.item-descr Смажений лосось, огірок, авокадо, японський майонез, кунжут та солодкий соус
+
+					.item-total
+						.item-total-wrap
+							.item-total__info старая цена 299 ₴
+							.item-total__cond
+								.item-total__cost 250 ₴
+								.item-total__weight 350 г
+						.item-get
+							.incr-btn.incr-btn--fix
+								.incr-btn__el.btn--md.btn--red Купить
+								.incr-btn-wrap
+									+incr(1,"incr--red")
+						a(href="#").item-back.icon-row
+							+icon("arrow-round-left","icon icon--red icon--lg icon--right")
+							span.type--sm назад в раздел
+
+					.structure-wrap
+						.structure
+							.structure__el
+								.structure__el-name калории
+								.structure__el-val 2841
+							.structure__el
+								.structure__el-name белки
+								.structure__el-val 75,4
+							.structure__el
+								.structure__el-name жиры
+								.structure__el-val 111,5
+							.structure__el
+								.structure__el-name углеводы
+								.structure__el-val 198,2
+						.structure-text энергетическая ценность указана за 100 г
+				// item info === end
+
+			// recommend
+			.title.title--lg Рекомендуем также
+			.product-cont
+				- for (var i=0;i< 4;i++)
+					+product-sm("item-4.jpg")
+			// recommend === end
+	+footer("dark")
+include ./block_html/_script.pug
