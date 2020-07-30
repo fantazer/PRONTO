@@ -1,0 +1,57 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--gray
+	+header()
+	.content.content--gray
+		.main-cont
+			+bread()
+			.lk
+				.lk-toolbar
+					.lk-toolbar-wrap
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| Профиль и адреса
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| История заказов
+						a(href="#").lk-toolbar__el.lk-toolbar__el--active
+							+icon("play","icon")
+							| Мои пиццы
+						a(href="#").lk-toolbar__el
+							.lk-toolbar__el-text Бонусы
+							.bonus-val 240Б
+				.lk-content
+					.title-row.title-row--btn
+						.title-row-info
+							.arrow(onclick="window.history.go(-1); return false;")
+								+icon("arrow-conner-left","icon")
+							.title.title--lg Мои пиццы
+						.btn--sm.btn--mark Конструктор пиццы
+					.product-cont.product-cont--three
+						- for (var i=0;i<5;i++)
+							.product-el.js-slide-parrent
+								a(href="#" class ="product__img" ).product__img
+									.product__img-el(style="background-image:url('img/empty.jpg')")
+									.product__img-upload
+										.icon-block.icon-block--mark
+											+icon("plus","icon")
+										span добавить своё фото
+								.product__cont
+									a(href="#").product__title Капрічоза
+									.product-box
+										.product__text Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда
+									.size.size--mark
+										.size__el.size__el--active 15 см
+										.size__el 30 см
+										.size__el 45 см
+									.product-footer
+										.product-price 250 ₴
+										//.product-weight 300 гр
+										.item-add
+											+incr(false,"incr--single incr--mark-light ")
+								.product-change изменить ингредиенты пиццы
+
+
+	+footer()
+include ./block_html/_script.pug

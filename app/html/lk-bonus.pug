@@ -1,0 +1,95 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--gray
+	+header()
+	.content.content--gray
+		.main-cont
+			+bread()
+			.lk
+				.lk-toolbar
+					.lk-toolbar-wrap
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| Профиль и адреса
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| История заказов
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| Мои пиццы
+						a(href="#").lk-toolbar__el.lk-toolbar__el--active
+							+icon("play","icon")
+							.lk-toolbar__el-text Бонусы
+							.bonus-val 240Б
+				.lk-content
+					.title.title--lg Бонусные баллы
+					.status-info
+						.status-info__el.status-info__el--mark
+							.status-info__wrap
+								.type--main на вашому рахунку
+								.status-info__val 227
+								.type--main бонусних балів
+							.status-info__footer 1 бонусний бал = 1 грн
+						.status-info__el
+							.status-info__wrap
+								.type--main очікують нарахування
+								.status-info__val.type--gray 27
+								.type--main бонусних балів
+						.status-info__el
+							.status-info__wrap
+								.type--main залишилось витратити
+								.status-info__val.type--mark 396 ₴
+								.type--main до статусу <span class="type--md type--bold">Gold</span>
+
+					.status
+						.status-head
+							.status-current
+								.status-current__text ваш статус
+								.status-current__val Silver <span class="type--mark">+4%</span>
+							.status-condition +2% кешбеку та <span class="type--red">+2% при замовленні до 29.06.20</span>
+						.status-row
+							.status-state
+								.status-state__el.status-state__el--active
+									.status-state__el-val(style="background-color:#c2e2d0") 0%
+									.status-state__el-text Start
+									.status-state__el-pin
+								.status-state__el.status-state__el--active
+									.status-state__el-val(style="background-color:#f0ac85") 2-4%
+									.status-state__el-text Bronze
+									.status-state__el-pin
+								.status-state__el
+									.status-state__el-val(style="background-color:#e5e5e5 ") 4-6%
+									.status-state__el-text Silver
+									.status-state__el-pin
+								.status-state__el
+									.status-state__el-val(style="background-color:#ffd400") 6-8%
+									.status-state__el-text Gold
+									.status-state__el-pin
+								.status-state__el
+									.status-state__el-val.status-state__el-val--empty 8-10%
+									.status-state__el-text Platinum
+									.status-state__el-pin
+								.status-state__el
+									.status-state__el-val(style="background-color:#292929").type--mark 10-15%
+									.status-state__el-text Diamond
+									.status-state__el-pin
+							.status-line
+								.status-line__val(style="width:27%")
+							.status-total 4587 грн
+					.text
+						.title.title--md За что начисляются баллы?
+						p Еда, приготовленная с душой, всегда только свежие продукты, увлечённые своим делом повара, интересное и разнообразное меню для гурманов и ценителей классики — мы предлагаем попробовать блюда разных кухонь мира и оценить преимущества.
+
+						p Если хочется заказать еду с доставкой домой или в офис, заходите на pravilasushi.ru.
+
+
+						p Повара Dostaевского готовят по традиционным и классическим рецептам, а также воплощают собственные кулинарные идеи. Мы постоянно растём и развиваемся, добавляя в меню новые интересные позиции и совершенствуя условия обслуживания, будь то доставка готовой еды на дом клиенту или в офис для корпоративного праздника.
+
+						.title.title--md На что можно потратить баллы?
+
+						p Бесплатная доставка осуществляется при сумме заказа от 900 рублей в радиусе 4-х километров от магазина на проспекте Ленина 41
+
+						p Повара Правила Суши готовят по традиционным и классическим рецептам, а также воплощают собственные кулинарные идеи. Мы постоянно растём и развиваемся, добавляя в меню новые интересные позиции и совершенствуя условия обслуживания, будь то доставка готовой еды на дом клиенту или в офис для корпоративного праздника.
+	+footer()
+include ./block_html/_script.pug

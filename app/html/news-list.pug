@@ -1,0 +1,20 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page
+	+header()
+	.content
+		.main-cont
+			.title-row
+				.arrow(onclick="window.history.go(-1); return false;")
+					+icon("arrow-conner-left","icon")
+				.title.title--lg Новости
+			- for (var i=0;i<8;i++)
+				.news-list-el
+					.news-list__img(style="background-image:url('img/cafe-item-1.jpg')")
+					.news-list__info
+						.news-list__date 21 августа 2020 г
+						.title.title--md.title--clear Пиццерия на Сихове увеличивает зону доставки!
+						.news-list__text Ми знаємо, що рухаємось в правильному напрямку, про це свідчить число наших постійних клієнтів, яке постійно зростає. Вже більше 50 000 поціновувачів піци в Івано-Франківську обирають «Pronto Pizza»! Для нас це велика честь і велика відповідальність. Тому ми постійно працюємо над нашими сильними сторонами, а також над помилками, адже ніхто не ідеальний, проте ми таки прагнемо досконалості в своїй справі.
+	+footer()
+include ./block_html/_script.pug

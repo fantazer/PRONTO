@@ -1,0 +1,64 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--gray
+	+header()
+	.content.content--gray
+		.main-cont
+			+bread()
+			.lk
+				.lk-toolbar
+					.lk-toolbar-wrap
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| Профиль и адреса
+						a(href="#").lk-toolbar__el.lk-toolbar__el--active
+							+icon("play","icon")
+							| История заказов
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| Мои пиццы
+						a(href="#").lk-toolbar__el
+							.lk-toolbar__el-text Бонусы
+							.bonus-val 240Б
+				.lk-content
+					.title.title--lg История заказов
+					.history
+						- for (var j=0;j<5;j++)
+							.history-card
+								.history-card__wrap
+									.history-card__info
+										.history-card__date 28 Сентября, 2017
+										.history-card__numb № 43576
+									.history-card__list
+										- for (var i=0;i<3;i++)
+											a(href="#" style="background-image:url('img/item-1.jpg')").history-card__list-el
+												.history-card__list-el-val x2
+										.history-card__list-el.history-card__list-el--last(style="background-image:url('img/card.jpg')")
+											.history-card__list-el-val +2
+									.history-card__price
+										.history-card__price_val 5430 ₴
+								.history-info
+									.history-info__head
+										.history-info__head-date 28 Апреля 2017
+										.history-info__head-state Доставлен
+										.history-info__head-numb № 43576
+									- for (var k=0;k<4;k++)
+										.history-info__list
+											.history-info__el
+												a(href="#" style="background-image:url('img/item-1.jpg')").history-info__el-img
+												.history-info__el-about
+													.history-info__el-title Гавайская с курицей
+													.history-info__el-text Традиционное, 35 см
+												.history-info__el-count x2
+												.history-info__el-price 680 ₴
+									.history-info-footer
+										.history-info-total
+											.history-info-total__text Сумма:
+											.history-info-total__val 1 184 ₴
+										.history-info-get
+											+icon("refresh","icon")
+											span Повторить заказ
+
+	+footer()
+include ./block_html/_script.pug

@@ -51,11 +51,19 @@ body
 		background: #2a2a2a
 	.shrink
 		box-shadow none
+
+.page--gray
+	.content
+		background: #f8f8f8
+	.footer-top-wrap
+		background: white
 .content
 	flex-grow 1
-	padding: 30px 0 100px 0
+	padding: 50px 0 100px 0
 .content--mid
 	flex(mid)
+
+
 
 // animate top menu
 @keyframes slideInDown
@@ -90,7 +98,6 @@ body
 	@extend .type--xl
 	margin-bottom: 30px
 	font-weight: 700
-	color $gray
 .page-error__img
 	margin-bottom: 30px
 .page-error__text
@@ -540,6 +547,9 @@ body
 	color $gray
 .lang__el--active
 	color black
+
+.header-main-wrap
+	box-shadow 0 5px 10px rgba(0, 0, 0, 0.05)
 .header
 	flex(between)
 	padding: 20px 0
@@ -664,24 +674,51 @@ body
 
 .product-el--sm
 	.product-footer
-		flex(mid)
-		fl()
+		margin-top: 0
 	.product-price
-		width: 100%
-		text-align: center
-		margin-bottom: 20px
-	.product-add
-		width: initial
+		font-size: 18px
 	.product__title
-		text-align: center
-
-
+		font-size: 18px
 .product__img
 	flex(mid)
+	position relative
+	overflow: hidden
 	img
 		margin: 0 auto
 		tr(all)
 		width: 100%
+	&:hover
+		.product__img-upload
+			transform translateY(0%)
+.product-change
+	padding: 8px
+	font-size: 14px
+	text-align center
+	background: $gray-light
+	color $gray
+	display block
+	tr()
+	cp()
+	&:hover
+		background: $mark
+		color white
+.product__img-upload
+	position absolute
+	width: 100%
+	left 0
+	z-index 10
+	bottom 0
+	f()
+	fl()
+	align-items center
+	padding-bottom: 20px
+	transform translateY(100%)
+	tr()
+	.icon-block
+		margin-bottom: 10px
+	span
+		@extend .type--sm
+
 
 .product__img--lg
 	.product__img-el
@@ -745,7 +782,8 @@ body
 	grid-template-columns: repeat(5, 1fr)
 
 .product-cont--three
-	grid-template-columns: repeat(auto-fill, minmax(20rem,1fr))
+	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
+	grid-gap 30px
 .product-footer
 	flex(between)
 	margin-top: 20px
@@ -758,7 +796,7 @@ body
 		font-weight: 700
 	@extend .type--md
 	background-color #ffffff
-	font-weight 600
+	font-weight 700
 	white-space nowrap
 .product-weight
 	margin-right auto
@@ -904,7 +942,6 @@ body
 .size--lg
 	br(30px)
 	.size__el
-		@extend .type--md
 		padding: 20px 10px
 		font-weight: 700
 		&:first-child
@@ -968,7 +1005,6 @@ body
 	br(20px)
 .sale-list__el-info
 	width calc(100% - 35% - 20px)
-	padding: 20px 0 0 0
 .sale-list__el-title
 	@extend .type--md
 	font-weight 700
@@ -1133,13 +1169,14 @@ body
 		.icon
 			transform rotate(180deg)
 
+
 // bread
 .bread
 	+below(640px)
 		display: none
 	f()
 	fw()
-	padding: 20px 0
+	padding: 0 0 20px 0
  
 .bread__el
 	margin-right: 15px
@@ -1394,3 +1431,1564 @@ body
 		display inline-block
 		font-size: 12px
 		width calc(100% - 20px)
+
+// sale-list
+.sale-list
+	+below(640px)
+		grid-gap 20px
+	display: grid
+	grid-gap 40px
+	grid-template-columns: repeat(auto-fill, minmax(18rem,1fr))
+.sale-list__el
+	display block
+.sale-list__el-img
+	bg-full()
+	padding: 32% 10%
+	br(20px)
+	width: 100%
+.sale-list__el-descr
+	+below(480px)
+		padding: 15px 0
+	padding: 15px
+	f()
+	justify-content space-between
+.sale-list__el-info
+	width calc(100% - 70px)
+.sale-list__el-title
+	color $dark
+	display inline-block
+	@extend .type--md
+	font-weight 700
+	line-height: 1.4
+	margin-bottom: 10px
+	tr()
+	&:hover
+		color $brown
+.sale-list__el-date
+	f()
+	@extend .type--sm
+	align-items center
+	color $gray
+	.icon
+		size 20px
+		fill $gray
+		margin-right: 10px
+.sale-list__el-more
+	margin-top: 15px
+
+.info-banner
+	+below(768px)
+		margin: 0 0 30px 0
+		padding: 20% 10%
+		br(0)
+		margin-left: -10px
+		width calc(100% + 20px)
+	bg-full()
+	br(20px)
+	padding: 15% 10%
+	margin 0 0 50px 0
+
+.sale-date
+	f()
+	@extend .type--sm
+	align-items center
+	color $gray
+	margin-bottom: 30px
+	.icon
+		size 20px
+		fill $gray
+		margin-right: 10px
+
+.info-descr
+	+below(768px)
+		padding-left: 0
+		margin-top: 0
+	padding-left: 75px
+	margin-top: -20px
+	margin-bottom: 50px
+
+// sale-list === end
+
+.map
+	position relative
+	padding: 20% 10%
+	background: $snow
+	min-height 400px
+	br(20px)
+	overflow hidden
+	margin-bottom: 30px
+.map__el
+	position absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	bg-full()
+// deliver
+.deliver-zone
+	f()
+	justify-content space-between
+	margin-bottom: 40px
+.deliver-zone__el
+	width: 30%
+.deliver-zone__head
+	f()
+	align-items center
+	margin-bottom: 10px
+	.icon
+		size 20px
+		fill $mark
+	span
+		display inline-block
+		font-weight: 700
+		margin-right: 10px
+.deliver-zone__type
+	.icon
+		size 26px
+		margin-right: 10px
+
+.deliver-zone__info
+	padding-left: 30px
+	line-height: 1.6
+.deliver-info
+	br(10px)
+	border 1px solid $mark
+	padding: 20px 40px
+	display: grid
+	grid-gap 20px
+	grid-template-columns: 1fr 1fr
+	//grid-template-columns: repeat(auto-fill, minmax(12rem,1fr))
+.deliver-info__el
+	@extend .type--md
+	font-weight 700
+	line-height: 1.4
+// deliver === end
+
+// review
+.review
+	+below(768px)
+		fw()
+	f()
+	justify-content space-between
+	align-items: stretch
+.review-wrap
+	+below(768px)
+		width: 100%
+		margin-bottom: 30px
+	width calc(100% - 390px)
+.review-msg
+	+below(768px)
+		width: 100%
+	width: 350px
+.msg
+	background: #f5f5f5
+	br(20px)
+	padding: 50px 70px
+	flex(mid)
+	fl()
+
+.msg__icon
+	margin-bottom: 10px
+.msg__title
+	@extend .type--md
+	font-weight 700
+	margin-bottom: 10px
+.msg__text
+	text-align center
+	line-height: 1.4
+	margin-bottom: 20px
+	font-size: 14px
+
+.review__el
+	background-color #ffffff
+	margin-bottom: 20px
+	padding-bottom: 20px
+	border-bottom 1px solid #F5F5F5
+.review__el-info
+	+below(640px)
+		fw()
+	f()
+	align-items center
+	margin-bottom: 10px
+.review__el-name
+	+below(640px)
+		margin-bottom: 10px
+	font-weight 700
+	margin-right: 20px
+.review__el-date
+	color $gray
+	@extend .type--sm
+.review__el-text
+	line-height: 1.6
+
+.answer
+	margin-top: 20px
+
+.answer-head__icon
+	margin-bottom: 10px
+.answer-head__name
+	@extend .type--lg
+	font-weight 700
+.answer-text
+	padding-left: 50px
+	p
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+.loader
+	flex(mid)
+	margin: 30px 0
+
+
+.review-star
+	f()
+	.icon
+		fill $red
+		margin-right: 5px
+		size 16px
+// review === end
+
+// restaurant
+.restaurant
+	+below(960px)
+		grid-gap 20px
+		grid-template-columns: repeat(auto-fill, minmax(18rem,1fr))
+	display: grid
+	grid-gap 30px
+	//grid-template-columns: repeat(5, 1fr)
+	grid-template-columns: repeat(auto-fill, minmax(22rem,1fr))
+.restaurant-item__img
+	bg-full()
+	padding: 35% 10%
+	display: block
+	position: relative
+	br(20px)
+	overflow hidden
+.restaurant-item__cont
+	padding-top: 10px
+.restaurant-item__title
+	@extend .type--md
+	font-weight 700
+	line-height: 1.6
+	margin-bottom: 10px
+	display: block
+.restaurant-item__time
+	color $gray
+	@extend .type--sm
+	line-height: 1.4
+	margin-bottom: 5px
+	&:last-child
+		margin-bottom: 0
+
+// restaurant === end
+
+// ==== restaurant FULL
+.cafe-item
+	+below(768px)
+		fw()
+	f()
+	justify-content: space-between
+	margin-bottom: 50px
+.cafe-item__img-wrap
+	+below(768px)
+		width: 100%
+		margin-bottom: 10px
+	width: 55%
+.cafe-item__img-el
+	+below(768px)
+		margin-bottom: 20px
+	bg-full()
+	padding: 30% 10%
+	br(20px)
+.cafe-item__cont
+	+below(768px)
+		width: 100%
+		padding: 0 10px
+	width: calc(45% - 40px)
+.cafe-item__title
+	+below(1024px)
+		font-size: 28px
+	+below(768px)
+		font-size: 24px
+	+below(640px)
+		margin-bottom: 10px
+		font-size: 20px
+	color $dark
+	@extend .type--md
+	font-weight 700
+	margin-bottom: 20px
+.cafe-item__time
+	+below(640px)
+		margin-bottom: 20px
+
+	margin-bottom: 20px
+	span
+		display: block
+		margin-bottom: 10px
+		@extend .type--sm
+.cafe-item__phone
+	display: block
+	color $dark
+	@extend .type--md
+	font-weight: 700
+	margin-bottom: 10px
+.cafe-item__phone-text
+	margin-bottom: 30px
+	color $gray
+	@extend .type--sm
+.cafe-item__text
+	+below(768px)
+		margin: 0
+	padding-right: 20px
+.cafe-item__adv
+	f()
+	align-items center
+	margin-bottom: 20px
+.cafe-item__adv-icon
+	.icon
+		fill $mark
+		size 28px
+		margin-right: 20px
+//.icon
+.cafe-item__adv-text
+	font-weight: 700
+.cafe-get
+	@extend .btn--lg
+	@extend .btn--light
+	margin: 20px 0
+	padding: 15px 40px
+	font-weight: 700
+// ==== restaurant FULL === end
+
+// gallery
+.gallery__el
+	bg-full()
+	padding: 40% 10%
+	br(10px)
+.gallery__el-nav
+	bg-full()
+	br(10px)
+	cp()
+	padding: 40% 10%
+
+.gallery-slider-nav
+	.slick-slide
+		margin: 0 10px
+	.slick-current
+		tr()
+		opacity: .4
+	.slick-track
+		margin-left: 0px
+	.slick-list
+		margin: 0 -10px
+.gallery-slider
+	margin-bottom 10px
+
+// gallery === end
+
+// news list
+.news-list-el
+	f()
+	align-items: flex-start
+	margin-bottom: 60px
+.news-list__img
+	br(20px)
+	bg-full()
+	padding: 10%
+	width: 35%
+.news-list__info
+	width 65%
+	margin-left: 40px
+.news-list__date
+	color $gray
+	@extend .type--xs
+	margin: 10px 0
+.news-list__text
+	color $gray
+	@extend .type--sm
+	line-height: 1.4
+
+// news list === end
+
+// vacancy
+// VACANCY List
+.vacancy-list
+	+below(1024px)
+		grid-template-columns repeat(3, 1fr)
+	+below(960px)
+		grid-template-columns repeat(2, 1fr)
+		margin-bottom: 40px
+		grid-gap 40px
+	+below(640px)
+		grid-gap 20px
+	+below(520px)
+		grid-template-columns 1fr
+	display: grid
+	grid-gap 40px
+	grid-template-columns repeat(3, 1fr)
+	margin-bottom: 100px
+
+.vacancy-list__el
+	overflow: hidden
+	cp()
+	tr(all)
+.vacancy-list__img
+	padding: 33% 10%
+	bg-full()
+	position: relative
+	margin-bottom: 15px
+	br(10px)
+.vacancy-list__title
+	@extend .type--md
+	font-weight: 700
+	margin-top: auto
+	line-height: 1.4
+	margin-bottom: 10px
+.vacancy-list__decr
+	line-height: 1.6
+	color $gray
+	font-weight: 400
+	f()
+	fw()
+	margin-bottom: 5px
+	@extend .type--sm
+.vacancy-list__decr-type
+	opacity: .6
+	margin-right: 10px
+
+.vacancy-list__decr-val
+	color black
+
+.vacancy-list__el-cont
+	position: absolute
+	width: 100%
+	height: 100%
+	left 0
+	top 0
+	f()
+
+.vacancy-footer
+	f()
+	margin-top: 20px
+
+.vacancy-set
+	background: $mark
+	color white
+	border-radius 25px 0 0 25px
+	tr()
+	&:hover
+		background-color lighten($mark,10)
+
+.vacancy-more
+	border-radius 0 25px 25px 0
+	border 1px solid $border-color
+	tr()
+	&:hover
+		background-color lighten($snow,5)
+.vacancy-footer__el
+	@extend .type--sm
+	font-weight 700
+	padding: 13px 20px
+	width: 50%
+	text-align center
+// vacancy === end
+
+.contact-info
+	f()
+	justify-content space-between
+	margin: 30px 0
+.contact-info__map
+	width: 65%
+.contact-info__text
+	width: 35%
+	margin-left: 30px
+
+.about-cont
+	max-width 900px
+
+.subscr-conf
+	flex(between)
+	.login-remember
+		width: 60%
+		margin-bottom: 0
+
+.subscr-wrap
+	padding: 40px 0
+	background: #f8f8f8
+	margin-bottom: 40px
+
+.text-box-sm
+	max-width 600px
+
+.order
+	+below(968px)
+		fw()
+	f()
+	justify-content:space-between
+	align-items streth
+
+.order-cont
+	+below(960px)
+		fw()
+		margin-bottom: 50px
+	f()
+	justify-content space-between
+	align-items: flex-start
+	width: 100%
+
+.total
+	+below(960px)
+		width: 100%
+		max-width 640px
+		margin: 0 auto
+	width: calc(30% - 20px)
+	margin-left auto
+.total-title
+	@extend .type--md
+	font-weight: 700
+	margin-bottom: 30px
+.total-row
+	flex(between)
+	margin-bottom: 10px
+.total-row__val
+	font-weight: 700
+	@extend .type--md
+	white-space nowrap
+.total-text
+	@extend .type--md
+	margin-bottom: 10px
+	line-height: 1.6
+	font-size: 14px
+.total-cost
+	flex(between)
+	padding-top: 20px
+	margin-top: 20px
+	border-top 1px solid $border-color
+	margin-bottom: 30px
+
+.total-cost__text
+	font-weight 700
+	@extend .type--md
+.total-cost__val
+	font-weight 700
+	@extend .type--lg
+
+.total-get
+	@extend .btn--md
+	@extend .btn--mark
+	padding: 20px 50px
+	width: 100%
+
+
+.order__el-info
+	+below(640px)
+		fl()
+		justify-content center
+	f()
+	align-items center
+
+.order__el
+	+below(640px)
+		fw()
+		flex(mid)
+		fl()
+		position: relative
+	display flex!important
+	flex(between)
+	padding: 10px 0
+	outline none!important
+	margin-bottom: 10px
+	border-bottom 1px solid $border-color
+.order__img
+	+below(640px)
+			margin-right: 0
+			height: 150px
+			width: 150px
+	size 90px
+	br(5px)
+	bg-full()
+	background-size: contain
+	margin-right: 20px
+
+/*.order__name
+	font-weight: 700
+	font-size: 14px
+	margin-bottom: 5px
+	display block*/
+
+.order__name-text
+	+below(640px)
+			font-size: 20px
+			margin-bottom: 20px
+			text-align: center
+	tr()
+	margin-bottom: 5px
+	font-weight 700
+	color $dark
+	display block
+	&:hover
+			color $mark
+.order__adds
+	+below(640px)
+		width: 100%
+		text-align center
+		margin-bottom: 10px
+	@extend .type--sm
+	color $gray
+.order__el-change
+	+below(640px)
+		width: 100%
+		fl()
+	f()
+	align-items center
+	width: 35%
+	justify-content space-between
+
+.order__inc
+	+below(640px)
+		.incr
+			width: auto
+
+.order__price
+	+below(768px)
+		margin: 20px 0
+		font-size: 20px
+		margin-right:initial
+		text-align center
+	font-weight 700
+	white-space nowrap
+.order__delete
+	+below(640px)
+		position absolute
+		top 0
+		right: 0
+	margin-left: 20px
+	.icon
+		cp()
+		tr(all)
+		size 16px
+		fill $gray
+		&:hover
+			fill black
+
+.order-item
+	+below(960px)
+		margin-bottom: 20px
+		width: 100%
+	width: 65%
+
+.order-add
+	+below(1024px)
+		grid-template-columns: repeat(3, 1fr)
+	+below(640px)
+		grid-template-columns: repeat(2, 1fr)
+		margin-bottom: 0
+	+below(480px)
+		grid-template-columns: 1fr
+	display: grid
+	grid-gap 40px
+	grid-template-columns: repeat(4, 1fr)
+	margin-bottom: 80px
+
+.order-add--sm
+	grid-template-columns: repeat(auto-fill, minmax(10rem,1fr))
+
+
+.order__el-wrap
+	margin-bottom: 60px
+
+// steps
+.steps
+	+below(1024px)
+		display none
+	f()
+	justify-content space-between
+	width: 100%
+	margin-bottom: 30px
+.step__el
+	f()
+	fl()
+	position relative
+	pointer-events none
+	align-items center
+.step-line
+	height: 1px
+	width: 140%
+	margin-top: 30px
+	border 1px dashed $border-color
+.step__el-val
+	size 60px
+	border 1px dashed $border-color
+	flex(mid)
+	round()
+	font-weight: 700
+	margin-bottom: 10px
+	color $gray
+
+.step__el-name
+	@extend .type--sm
+	text-align center
+	color $gray
+	font-size: 10px
+.step__el--current
+	&:before
+		content ''
+		background: $mark
+	.step__el-val
+		background:black
+		color white
+		border-color black
+	.step__el-name
+		color black
+
+.step__el--active
+	pointer-events initial
+	.step__el-name
+		color black
+	.step__el-val
+		background:$mark
+		border-color $mark
+		color white
+// steps === end
+
+.order-form
+	+below(1024px)
+		width: 100%
+		margin-bottom: 40px
+	width: 60%
+
+.order-condition
+	+below(960px)
+		width: 100%
+	width: calc(30% - 20px)
+	margin-left auto
+
+.form-block
+	margin-bottom: 10px
+
+.direction--sm
+	display: grid
+	grid-column-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
+.direction-el
+	padding: 25px 25px 25px 30px
+	br(20px)
+	cp()
+	border 1px solid $border-color
+	margin-bottom: 20px
+	position relative
+	overflow hidden
+	&:before
+		content ''
+		position absolute
+		top 0
+		left 0
+		width: 10px
+		height: 100%
+		background: $snow
+.direction-el__title
+	font-weight: 700
+	margin-bottom: 10px
+.direction-el__text
+	@extend .type--sm
+.direction-el.active
+	&:before
+		content ''
+		background: $mark
+
+.direction-el-add
+	f()
+	cp()
+	align-items center
+	margin-bottom: 30px
+	span
+		color $brown
+	.icon-block
+		margin-right: 20px
+
+
+.icon-block
+	size 40px
+	flex(mid)
+	br(10px)
+	.icon
+		size 16px
+
+.icon-block--mark
+	background: $mark
+	&:active
+		.icon
+			fill $red
+	.icon
+		fill white
+
+.icon-block--empty
+	border 2px solid $mark
+	&:active
+		.icon
+			fill $red
+	.icon
+		fill $mark
+
+
+.goods-list
+	margin-bottom: 20px
+
+.goods-list__el
+	flex(between)
+	margin-bottom: 10px
+	@extend .type--sm
+	&:last-child
+		margin-bottom: 0
+.goods-list__el-name
+	width: 65%
+	color $red
+	white-space nowrap
+	text-overflow ellipsis
+	overflow hidden
+
+.goods-list__el-name--gray
+	color black
+
+
+.goods-list__el-val
+	width: 15%
+	text-align center
+.goods-list__el-cost
+	white-space nowrap
+	width: 20%
+	text-align: right
+	color $gray
+
+.order-total
+	+below(640px)
+		width: 100%
+		text-align center
+	border-top 1px solid $border-color
+	flex(between)
+	padding-top: 20px
+	margin: 20px 0
+.order-total__text
+	+below(640px)
+		text-align center
+		width: 100%
+	margin-right: 10px
+	@extend .type--md
+	font-weight 700
+
+.order-total__val
+	+below(640px)
+		width: 100%
+		text-align center
+		font-size: 38px
+	@extend .type--lg
+	font-weight: 700
+
+// range slider
+.range__wrap
+	margin-bottom 70px
+	margin-top: 30px
+	position relative
+	.irs-hidden-input
+		display none!important
+	.irs-bar-edge
+		background $mark
+		height 15px
+		border-radius 10px 0px 0px 10px
+		width 25px
+	.irs-bar
+		height 15px
+		background $mark
+		br(10px)
+	.irs-line-left
+		height 15px
+		border-radius 10px 0px 0px 10px
+		background $snow
+	.irs-line-right
+		height 15px
+		background $snow
+		border-radius 0px 10px 10px 0px
+	.irs-line-mid
+		background $snow
+		height 15px
+	.irs-line
+		height 15px
+	.single
+		background: $mark
+		size 25px
+		br(5px)
+		top 20px
+	.irs-slider
+		width 45px
+		height 30px
+	.irs-min, .irs-max
+		display none
+	.irs-single
+		&:before
+			content ''
+			display none
+		top 55px
+		background transparent
+		color black
+		font-size: 18px
+	.irs--flat .irs-handle > i:first-child
+		display none
+	.irs--flat .irs-line
+		background: #F8F8F8
+		border 1px solid $border-color
+		border-radius 10px
+// range slider === end
+
+
+.range-head
+	+below(640px)
+		fw()
+	flex(between)
+.range-title
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+	@extend .type--md
+	font-weight: 700
+.range-head__info
+	f()
+	align-items center
+	.icon
+		size 18px
+		fill $mark
+.range-head__val
+	@extend .type--md
+	margin: 0 10px
+	color $red
+
+// ==== ORDER ==== === end
+
+.drop-fade
+	transform: scaleY(0)
+	transition opacity .6s
+	transform-origin: top
+	opacity: 0
+	z-index -1
+	position absolute
+	left -9999px
+
+.drop-fade.active
+	transition opacity .6s
+	transform: scaleY(1)
+	opacity: 1
+	z-index 1
+	position relative
+	left 0
+
+
+.drop-slide
+	transform: scaleY(0)
+	transition transform .6s, opacity .6s
+	transform-origin: top
+	z-index -1
+	position absolute
+	left -9999px
+.drop-slide.active
+	transition transform .6s, opacity .6s
+	transform: scaleY(1)
+	opacity: 1
+	z-index 1
+	position relative
+	left 0
+
+// template nice-select
+.nice-select
+	br(20px)
+	display: block
+	color #000000
+	font-size 14px
+	font-weight 700
+	margin-bottom: 0
+	height: 55px
+	float none
+	f()
+	align-items center
+	padding: 10px 30px
+	&:after
+		content ''
+		size 7px
+		right: 20px
+	.list
+		width: 100%
+		left 0px
+		border-radius 0 0 20px 20px
+		border 0px solid $border-color
+		border-top 0
+		margin-top: 0
+		max-height 150px
+		overflow-y auto
+		li
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+		.current //max width dots
+			display block
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+			max-width 100%
+			width: 100%
+			text-align: left
+
+.nice-select.open
+	border-radius 20px 20px 0 0
+
+select.select-beauty
+	display: none!important
+
+.element-select
+	padding: 20px 0
+
+.nice-select:active, .nice-select.open, .nice-select:focus
+	border 1px solid $border-color
+
+// template nice-select === end
+
+.col-2
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(8rem,1fr))
+
+
+// lk
+
+.lk
+	+below(768px)
+		fw()
+	f()
+	justify-content space-between
+	margin-top: 30px
+.lk-toolbar
+	+below(768px)
+		width: 100%
+		margin-bottom: 30px
+	width: 27%
+.lk-toolbar-wrap
+	br(10px)
+	background: white
+	padding: 30px 50px
+.lk-toolbar__el
+	+below(768px)
+		width: 100%
+	margin-bottom: 25px
+	tr()
+	f()
+	align-items center
+	font-weight: 700
+	&:last-child
+		margin-bottom: 0
+	&:hover
+		color $mark
+
+	.icon
+		size 16px
+		fill $mark
+		margin-right: 10px
+		display none
+.lk-toolbar__el--active
+	color $mark
+	margin-left: -25px
+
+	.icon
+		display block
+.lk-toolbar__el-text
+	margin-right: 10px
+.bonus-val
+	color $mark
+	@extend .type--xs
+	font-weight 700
+	transform translateY(-10px)
+.lk-content
+	+below(768px)
+		width: 100%
+	width: 70%
+
+.lk-profile
+	+below(768px)
+		width: 100%
+	+below(640px)
+		fw()
+	f()
+	justify-content space-between
+	align-items:flex-start
+
+.lk-profile-info
+	+below(768px)
+		width: 100%
+	width: 60%
+.lk-profile-info__el
+	margin-bottom: 30px
+
+.lk-profile-nav
+	+below(768px)
+		width: 100%
+		margin-top: 20px
+	+below(640px)
+		padding: 0
+		border-left 0
+	width: 40%
+	padding: 20px 0 20px 25px
+	border-left 1px solid $border-color
+.lk-profile-nav__el
+	f()
+	tr()
+	cp()
+	align-items center
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+	&:hover
+		color $mark
+.lk-profile-nav__el-icon
+	margin-right: 20px
+	.icon
+		size 20px
+		fill $mark
+//.icon
+.lk-adress__el
+	padding: 25px
+	margin-bottom: 30px
+	border-radius 10px
+	background-color #ffffff
+.lk-adress__type
+	color $mark
+	font-weight 700
+	margin-bottom: 10px
+.lk-adress__val
+	line-height: 1.4
+	margin-bottom: 20px
+	@extend .type--sm
+.lk-adress-footer
+	flex(between)
+.lk-adress-footer__el
+	flex(mid)
+	cp()
+	@extend .type--sm
+	&:hover
+		span
+			color black
+	.icon
+		margin-right: 10px
+		size 16px
+	span
+		tr(all)
+		display: inline-block
+		color $gray
+.lk-adress-edit
+	.icon
+		fill $mark
+.lk-adress-remove
+	.icon
+		fill $red
+
+.lk-adress__add
+	flex(mid)
+	tr(all)
+	cp()
+	height: 50px
+	border-radius 10px
+	background-color #ffffff
+	&:hover
+		span
+			color black
+	.icon
+		size 16px
+		fill $mark
+		margin-right: 10px
+	span
+		color $gray
+		tr(all)
+
+.profile__img
+	flex(mid)
+	round()
+	cp()
+	position relative
+	size 120px
+	overflow hidden
+	background: #f1f1f1
+	margin-bottom: 30px
+	&:hover
+		.profile__img-load
+			opacity: 1
+
+.profile__img-icon
+	.icon
+		size 40px
+		fill $gray
+
+.profile__img-load
+	tr()
+	flex(mid)
+	position absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	background: #0606062e
+	opacity: 0
+	.profile__img-load-icon
+		size 40px
+		br(10px)
+		flex(mid)
+		background: white
+		.icon
+			size 16px
+			fill $mark
+.profile__img-el
+	bg-full()
+	position absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+
+// lk === end
+
+
+// LK HISTORY
+// history
+.lk-history
+	+below(768px)
+		margin-top: 30px
+	margin-left: auto
+	margin-right: auto
+	margin-top: 100px
+	max-width 1024px
+.history
+	width: 100%
+	overflow: hidden
+	padding-bottom 30px
+	+below(640px)
+		max-width 340px
+		margin-left: auto
+		margin-right: auto
+.history-card
+	+below(1024px)
+		.top
+			display: none
+	perspective 600px
+	padding: 5px
+	border 1px solid $snow
+	margin-bottom: 10px
+	br(10px)
+.history-card__wrap
+	+below(640px)
+		fw()
+	cp()
+	f()
+	br(10px)
+	background: white
+	padding: 20px
+	align-items: center
+	transform-style: preserve-3d;
+	//transition all .6s
+
+.history-card__wrap--active
+	transform rotateX(90deg)
+	backface-visibility hidden
+.history-card__info
+	+below(640px)
+		width: 100%
+	margin-right: 5%
+.history-card__date
+	@extend .type--sm
+	margin-bottom: 5px
+	+below(640px)
+		margin-bottom: 10px
+.history-card__numb
+	@extend .type--sm
+	opacity .6
+.history-card__price
+	+below(640px)
+		margin-left:initial
+		width: 100%
+		flex(between)
+	margin-left: auto
+.history-card__price_val
+	color $dark
+	font-weight: 700
+
+.history-card__list
+	+below(640px)
+		width: 100%
+		margin: 20px 0
+	+below(480px)
+		grid-template-columns repeat(auto-fit, minmax(35px, 35px));
+	display: grid
+	grid-gap 15px
+	grid-template-columns repeat(4,1fr);
+.history-card__list-el
+	+below(480px)
+		size 35px
+	size 40px
+	round()
+	bg-full()
+	position: relative
+.history-card__list-el-val
+	position: absolute
+	right: -8px
+	top -2px
+	size 24px
+	background: $mark
+	color white
+	round()
+	flex(mid)
+	@extend .type--sm
+	font-size: 10px
+
+
+.history-card__list-el--last
+	.history-card__list-el-val
+		width: 100%
+		height: 100%
+		left 0
+		top 0
+		font-size: 16px
+		background: none
+		border 1px solid $border-color
+		color black
+		font-weight: 700
+//.history-card--open
+
+.history-info
+	//box-shadow 0 10px 15px rgba(0, 0, 0, 0.1)
+	background-color #ffffff
+	padding: 20px
+	display: none
+	br(10px)
+	border-color $mark
+.history-info--active
+	display: block
+//.history-card
+
+
+.history-info__head
+	+below(640px)
+		margin-left: auto
+		margin-right: auto
+		max-width 320px
+		font-size: 10px
+		justify-content: center
+	f()
+	margin-bottom: 20px
+.history-info__head-date
+	margin-right: 15px
+	font-weight: 700
+.history-info__head-state
+	color $mark
+	font-weight: 700
+.history-info__head-numb
+	+below(640px)
+		margin-left: 10px
+	margin-left: auto
+	color $gray
+.history-info__list
+	+below(640px)
+		margin-bottom: 20px
+	margin-bottom: 25px
+.history-info__el
+	+below(640px)
+		fw()
+		max-width 320px
+		margin-left: auto
+		margin-right: auto
+		padding-bottom: 10px
+		position: relative
+	f()
+	align-items: center
+	margin-bottom: 10px
+	padding-bottom: 20px
+	border-bottom 1px solid $gray--light
+.history-info__el-img
+	+below(480px)
+		size 55px
+	size 40px
+	round()
+	bg-full()
+	border 1px solid #cbbaac
+	position: relative
+	margin-right: 20px
+.history-info__el-about
+	+below(640px)
+		width: 70%
+	width: 50%
+.history-info__el-title
+	margin-bottom: 5px
+.history-info__el-text
+	opacity .6
+	@extend .type--sm
+.history-info__el-count
+	+below(640px)
+		margin-left:initial
+		margin-top: 10px
+		position: absolute
+		size 20px
+		background: white
+		top -10px
+		font-weight:700
+		font-size: 10px
+	round()
+	size 40px
+	border 1px solid $snow
+	flex(mid)
+	margin-left: auto
+	margin-right: 10%
+.history-info__el-price
+	+below(640px)
+		margin-top: 10px
+	flex(mid)
+	font-weight:600
+
+.history-info-footer
+	+below(640px)
+		fw()
+		justify-content: space-between
+	f()
+	padding-top: 20px
+	margin-top: 20px
+	border-top 1px solid $border-color
+	align-items: center
+.history-info-total
+	+below(640px)
+		width: 100%
+		justify-content: space-between
+	f()
+	align-items: center
+.history-info-total__text
+	margin-right: 10px
+	color $dark
+	font-weight 700
+.history-info-total__val
+	color $mark
+	@extend .type--xl
+	font-weight: 700
+	font-size: 24px
+.history-info-get
+	+below(640px)
+		width: 100%
+		margin: 20px 0
+	margin-left: auto
+	padding: 10px 20px
+	flex(mid)
+	cp()
+	&:hover
+		.icon
+			transform rotate(360deg)
+	.icon
+		transition all .8s
+		size 22px
+		margin-right: 10px
+		fill $mark
+// history === end
+// LK HISTORY === end
+
+// bonus
+.status-info
+	f()
+	justify-content space-between
+	align-items: flex-start
+	margin-bottom: 30px
+	//grid-template-columns: repeat(auto-fill, minmax(12rem,1fr))
+.status-info__el
+	background: white
+	width: 30%
+	br(10px)
+	overflow hidden
+.status-info__el--mark
+	.status-info__wrap
+		color white
+		background: $mark
+.status-info__wrap
+	padding: 20px
+	f()
+	fl()
+	align-items center
+	min-height 165px
+//.type--main
+.status-info__val
+	@extend .type--xl
+	font-weight:700
+	margin: 10px 0
+
+.status-info__footer
+	text-align center
+	background: white
+	padding: 7px
+	@extend .type--sm
+	color $gray
+.status
+	br(20px)
+	background: white
+	padding: 20px
+	margin-bottom: 30px
+.status-head
+	f()
+	align-items: flex-end
+	margin-bottom: 30px
+.status-current
+	margin-right: 20px
+.status-current__text
+	margin-bottom: 10px
+.status-current__val
+	font-weight:700
+	@extend .type--md
+
+.status-condition
+	@extend .type--sm
+	padding: 8px 30px
+	br(30px)
+	background: $gray-light
+	margin-bottom: -5px
+.status-row
+	margin-left: -30px
+.status-state
+	flex(between)
+.status-state__el
+	flex(mid)
+	fl()
+	width: 100%
+	margin-bottom: -8px
+	z-index 10
+.status-state__el-val
+	padding: 8px 10px
+	br(10px)
+	margin-bottom: 5px
+	@extend .type--sm
+.status-state__el-val--empty
+	border 1px solid black
+.status-state__el-text
+	@extend .type--sm
+	margin-bottom: 5px
+.status-state__el-pin
+	background: $gray-light
+	size 12px
+	round()
+.status-line
+	height: 4px
+	br(10px)
+	background: $gray-light
+	position relative
+	width 84%
+	margin: 0 auto
+.status-line__val
+	position absolute
+	left 0
+	top 0
+	height: 100%
+	background: $mark
+.status-total
+	text-align center
+	@extend .type--sm
+	margin-top: 20px
+.status-state__el--active
+	.status-state__el-pin
+		background: $mark
+
+// bonus === end

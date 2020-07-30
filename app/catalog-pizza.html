@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
     <link rel="stylesheet" href="bower/fancybox/dist/jquery.fancybox.css" />
-    <!--link(rel="stylesheet", href="bower/jquery-nice-select/css/nice-select.css")-->
-    <!--link(rel="stylesheet", href="bower/ion.rangeSlider/css/ion.rangeSlider.css")-->
+    <link rel="stylesheet" href="bower/jquery-nice-select/css/nice-select.css" />
+    <link rel="stylesheet" href="bower/ion.rangeSlider/css/ion.rangeSlider.css" />
     <!--endbuild-->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style-edit.css" />
@@ -72,26 +72,28 @@
                 </div>
             </div>
             <!-- main-header-->
-            <div class="main-cont">
-                <div class="header">
-                    <a class="logo" href="/">
-                        <img src="img/logo--white.svg" alt="" />
-                    </a>
-                    <div class="header-nav">
-                        <a class="header-nav__el header-nav__el--mark header-nav__el--green" href="#">Пицца</a>
-                        <a class="header-nav__el header-nav__el--mark header-nav__el--red" href="#">Суши</a>
-                        <a class="header-nav__el" href="#">Салаты</a>
-                        <a class="header-nav__el" href="#">Вторые блюда</a>
-                        <a class="header-nav__el" href="#">Соусы</a>
-                        <a class="header-nav__el" href="#">Напитки</a>
+            <div class="header-main-wrap">
+                <div class="main-cont">
+                    <div class="header">
+                        <a class="logo" href="/">
+                            <img src="img/logo--white.svg" alt="" />
+                        </a>
+                        <div class="header-nav">
+                            <a class="header-nav__el header-nav__el--mark header-nav__el--green" href="#">Пицца</a>
+                            <a class="header-nav__el header-nav__el--mark header-nav__el--red" href="#">Суши</a>
+                            <a class="header-nav__el" href="#">Салаты</a>
+                            <a class="header-nav__el" href="#">Вторые блюда</a>
+                            <a class="header-nav__el" href="#">Соусы</a>
+                            <a class="header-nav__el" href="#">Напитки</a>
+                        </div>
+                        <a class="header-cart" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#cart"></use>
+                            </svg>
+                            <div class="header-cart__cost">1249 р</div>
+                            <div class="header-cart__size">5</div>
+                        </a>
                     </div>
-                    <a class="header-cart" href="#">
-                        <svg class="icon">
-                            <use xlink:href="#cart"></use>
-                        </svg>
-                        <div class="header-cart__cost">1249 р</div>
-                        <div class="header-cart__size">5</div>
-                    </a>
                 </div>
             </div>
             <!-- main-header === end-->
@@ -107,7 +109,7 @@
                 <!--pizza-->
                 <div class="title title--xl type--center">Пицца</div>
                 <div class="product-cont">
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -123,13 +125,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -164,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -218,7 +220,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -310,7 +312,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -326,13 +328,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -367,7 +369,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -421,7 +423,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -513,7 +515,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -529,13 +531,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -570,7 +572,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -624,7 +626,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -716,7 +718,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -732,13 +734,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -773,7 +775,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -827,7 +829,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -919,7 +921,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -935,13 +937,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -976,7 +978,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -1030,7 +1032,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -1122,7 +1124,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -1138,13 +1140,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -1179,7 +1181,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -1233,7 +1235,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -1325,7 +1327,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-el js-switch-parrent">
+                    <div class="product-el js-slide-parrent">
                         <div class="product-el--add">
                             <svg class="icon">
                                 <use xlink:href="#cart-empty"></use>
@@ -1341,13 +1343,13 @@
                                 <div class="product__text">Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда</div>
                             </div>
                             <div class="product-conf">
-                                <div class="product-conf__el js-switch" data-item="border">
+                                <div class="product-conf__el js-slide" data-item="border">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
                                     <span>бортик</span>
                                 </div>
-                                <div class="product-conf__el js-switch" data-item="sauce">
+                                <div class="product-conf__el js-slide" data-item="sauce">
                                     <svg class="icon">
                                         <use xlink:href="#plus"></use>
                                     </svg>
@@ -1382,7 +1384,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="border">
+                        <div class="product-slide js-slide-cont" data-item="border">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -1436,7 +1438,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="product-slide js-switch-cont" data-item="sauce">
+                        <div class="product-slide js-slide-cont" data-item="sauce">
                             <div class="product-slide-wrap">
                                 <div class="product-slide__close js-product-slide__close">
                                     <svg class="icon">
@@ -1624,9 +1626,10 @@
     <script src="bower/jquery/dist/jquery.js"></script>
     <script src="bower/slick-carousel/slick/slick.js"></script>
     <script src="bower/fancybox/dist/jquery.fancybox.js"></script>
+    <script src="bower/sticky-kit/jquery.sticky-kit.min.js"></script>
     <!--script(src='bower/jquery.nicescroll/jquery.nicescroll.min.js')-->
-    <!--script(src='bower/jquery-nice-select/js/jquery.nice-select.min.js')-->
-    <!--script(src="bower/ion.rangeSlider/js/ion.rangeSlider.js")-->
+    <script src="bower/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="bower/ion.rangeSlider/js/ion.rangeSlider.js"></script>
     <!-- endbuild-->
     <script src="./js/add-on.js"></script>
     <script src="./js/script.js"></script>

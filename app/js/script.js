@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 	// nice select
-	//$('.select-beauty').niceSelect();
+	$('.select-beauty').niceSelect();
 	// nice select === end
 
 	//modals
@@ -114,20 +114,50 @@ $(document).ready(function () {
 	//toggle class + neighbor === end
 
 	//toggle class + parent
-	$('.js-switch').click(function(){
+	$('.js-slide').click(function(){
 		var thisItem = $(this).data("item");
 		var isEach = $(this).data("each") || false;
-		var parrent = $(this).closest(".js-switch-parrent");
+		var parrent = $(this).closest(".js-slide-parrent");
 		$(this).toggleClass("active")
 		var selector;
-		selector = $(".js-switch[data-item=" + thisItem + "]")
+		selector = $(".js-slide[data-item=" + thisItem + "]")
 		if(isEach){
 			selector.not(this).removeClass('active')
-			selector.not(this).closest(".js-switch-parrent").find(".js-switch-cont").removeClass('active')
+			selector.not(this).closest(".js-slide-parrent").find(".js-slide-cont").removeClass('active')
 		}
-		parrent.find(".js-switch-cont[data-item=" + thisItem + "]").toggleClass('active')
+		parrent.find(".js-slide-cont[data-item=" + thisItem + "]").toggleClass('active')
 	})
 	//toggle class + parent === end
+
+	// switch
+	$('.js-switch').click(function () {
+		var typeItem = $(this).data("item");
+		var groupItem = $(this).data("group");
+		var size = 0;
+		$('.js-switch').each(function () {
+			if ($(this).data("item") === typeItem) {
+				$(this).removeClass("active");
+				 size = $(this).size();
+			}
+			return size;
+		});
+		$('.js-switch-cont').each(function () {
+			if ($(this).data("group") === groupItem) {
+				if ($(this).data("item") === typeItem) {
+					if(size===1){
+						$(this).toggleClass("hidden")
+					}else{
+						$(this).removeClass("hidden")
+					}
+				} else {
+					$(this).addClass("hidden");
+				}
+			}
+		});
+		$(this).addClass("active");
+	});
+	// switch === end
+
 
 	// incr
 	var incrEl= {}
@@ -208,7 +238,7 @@ $(document).ready(function () {
 				return '<span class="dot"></span>';
 			},
 		});
-		// slider === end
+
 
 		// === custom arrow el ===
 		$('.slider-control--right').click(function () {
@@ -219,6 +249,34 @@ $(document).ready(function () {
 			$(this).closest(".slider-wrap").find(".slider-item").slick('slickPrev');
 		});
 		// custom arrow el === end
+
+		// gallery
+		$('.gallery-slider').slick({
+				slidesToShow: 1,
+				speed: 500,
+				dots:false,
+				arrows:false,
+				asNavFor: '.gallery-slider-nav',
+
+			});
+		$('.gallery-slider-nav').slick({
+			slidesToShow: 5,
+			speed: 500,
+			dots:false,
+			arrows:false,
+			asNavFor: '.gallery-slider',
+			focusOnSelect: true,
+			responsive: [
+
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 4
+					}
+				}
+			],
+		});
+		// gallery === end
 	// slider === end
 
 	// toggle size items
@@ -240,4 +298,29 @@ $(document).ready(function () {
 		$(this).toggleClass("active")
 	});
 	// constructor === end
+
+	//stick scroll
+	if($(window).width() > 1025 ){
+		$(".stick").stick_in_parent({
+			'offset_top':120
+		});
+	}
+	//stick scroll
+
+	//range slider simple
+  $(".range").ionRangeSlider({
+ 		//prefix: "Списать ",
+ 		//postfix: " баллов"
+ 	})
+
+	//history accord
+	$('.history-card__wrap').click(function () {
+		var current = $(this).closest('.history-card');
+		current.addClass("history-card--active");
+		current.find('.history-card__wrap').slideUp(600);
+		//current.find('.history-card__wrap').addClass('history-card__wrap--active');
+		current.find('.history-info').slideToggle(600);
+	});
+	//history accord===end
+
 });

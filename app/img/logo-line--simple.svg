@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142.889" height="31" viewBox="0 0 142.889 31">
+  <g id="Сгруппировать_4565" data-name="Сгруппировать 4565" transform="translate(-363.5 -411.5)">
+    <text id="ProntoPizza" transform="translate(405.389 433)" fill="#4fb046" font-size="18" font-family="Nunito-Bold, Nunito" font-weight="700"><tspan x="0" y="0">ProntoPizza</tspan></text>
+    <g id="Group-2" transform="translate(364 412)">
+      <circle id="Oval" cx="15" cy="15" r="15" fill="#fff" stroke="#979797" stroke-width="1"/>
+      <g id="Group" transform="translate(8.821 6.324)">
+        <path id="Path" d="M376.819,244.265l3.152,1.809a.881.881,0,0,1,0,1.529l-3.152,1.8a.881.881,0,0,1-1.318-.765v-3.612a.881.881,0,0,1,1.319-.764Z" transform="translate(-364.93 -237.879)" fill="#4fb046"/>
+        <path id="Path-2" data-name="Path" d="M274.819,300.265l3.152,1.809a.881.881,0,0,1,0,1.529l-3.152,1.8a.881.881,0,0,1-1.318-.764v-3.612a.881.881,0,0,1,1.319-.764Z" transform="translate(-268.215 -290.977)" fill="#4fb046"/>
+        <path id="Path-3" data-name="Path" d="M172.819,358.265l3.152,1.809a.881.881,0,0,1,0,1.529l-3.152,1.8a.881.881,0,0,1-1.318-.764v-3.612a.881.881,0,0,1,1.319-.764Z" transform="translate(-171.5 -345.972)" fill="#4fb046"/>
+        <path id="Path-4" data-name="Path" d="M172.819,240.265l3.152,1.809a.881.881,0,0,1,0,1.529l-3.152,1.8a.881.881,0,0,1-1.318-.764v-3.612a.881.881,0,0,1,1.319-.764Z" transform="translate(-171.5 -234.086)" fill="#4fb046"/>
+        <path id="Path-5" data-name="Path" d="M172.819,123.265l3.152,1.809a.881.881,0,0,1,0,1.529l-3.152,1.8a.881.881,0,0,1-1.318-.765v-3.612a.881.881,0,0,1,1.319-.764Z" transform="translate(-171.5 -123.148)" fill="#4fb046"/>
+        <path id="Path-6" data-name="Path" d="M274.819,183.265l3.152,1.809a.881.881,0,0,1,0,1.529l-3.152,1.8a.881.881,0,0,1-1.318-.765v-3.612a.881.881,0,0,1,1.319-.764Z" transform="translate(-268.215 -180.039)" fill="#ff3e3e"/>
+      </g>
+    </g>
+  </g>
+</svg>

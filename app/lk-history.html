@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<!--create by ANATOLY KUZNETSOV-->
+<!--contact mail:kuznecovs45@gmail.com skype:an_kuznetcov-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--colors-tabs-->
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <!--SEO-->
+    <title>Document</title>
+    <meta name="description" itemprop="description" content="" />
+    <!--build:css ./css/vendor.css-->
+    <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower/fancybox/dist/jquery.fancybox.css" />
+    <link rel="stylesheet" href="bower/jquery-nice-select/css/nice-select.css" />
+    <link rel="stylesheet" href="bower/ion.rangeSlider/css/ion.rangeSlider.css" />
+    <!--endbuild-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style-edit.css" />
+</head>
+
+<body>
+    <div class="page page--gray">
+        <!--block header-->
+        <div class="header-wrap">
+            <div class="header-top-wrap">
+                <div class="main-cont">
+                    <!-- header-top-->
+                    <div class="header-top icon-row">
+                        <div class="header-location">
+                            <svg class="icon icon--md icon--mark icon--right">
+                                <use xlink:href="#location"></use>
+                            </svg>
+                            <span>Івано-Франківськ</span>
+                        </div>
+                        <div class="header-work">
+                            <a class="phone icon-row" href="tel:8 800 434 45 34">
+                                <svg class="icon icon--md icon--gray icon--right">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                                <span>8 800 434 45 34</span>
+                            </a>
+                            <div class="header-work__time">с 10 до 20</div>
+                        </div>
+                        <div class="nav-top">
+                            <a class="nav-top__el" href="#">Акции</a>
+                            <a class="nav-top__el" href="#">Доставка и оплата</a>
+                            <a class="nav-top__el" href="#">Отзывы</a>
+                            <a class="nav-top__el" href="#">Кафе</a>
+                        </div>
+                        <div class="auth icon-row">
+                            <svg class="icon icon--md icon--gray icon--right">
+                                <use xlink:href="#user"></use>
+                            </svg>
+                            <span>Профиль</span>
+                        </div>
+                        <div class="lang">
+                            <a class="lang__el lang__el--active" href="#">Укр</a>
+                            <a class="lang__el" href="#">Eng</a>
+                            <a class="lang__el" href="#">Рус</a>
+                        </div>
+                    </div>
+                    <!-- header-top === end-->
+                </div>
+            </div>
+            <!-- main-header-->
+            <div class="header-main-wrap">
+                <div class="main-cont">
+                    <div class="header">
+                        <a class="logo" href="/">
+                            <img src="img/logo.svg" alt="" />
+                        </a>
+                        <div class="header-nav">
+                            <a class="header-nav__el header-nav__el--mark header-nav__el--green" href="#">Пицца</a>
+                            <a class="header-nav__el header-nav__el--mark header-nav__el--red" href="#">Суши</a>
+                            <a class="header-nav__el" href="#">Салаты</a>
+                            <a class="header-nav__el" href="#">Вторые блюда</a>
+                            <a class="header-nav__el" href="#">Соусы</a>
+                            <a class="header-nav__el" href="#">Напитки</a>
+                        </div>
+                        <a class="header-cart" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#cart"></use>
+                            </svg>
+                            <div class="header-cart__cost">1249 р</div>
+                            <div class="header-cart__size">5</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- main-header === end-->
+        </div>
+        <!--block header end-->
+        <div class="content content--gray">
+            <div class="main-cont">
+                <div class="bread">
+                    <a class="bread__el" href="#">Главная</a>
+                    <a class="bread__el" href="#">Категория</a>
+                    <div class="bread__el">Товар</div>
+                </div>
+                <div class="lk">
+                    <div class="lk-toolbar">
+                        <div class="lk-toolbar-wrap">
+                            <a class="lk-toolbar__el" href="#">
+                                <svg class="icon">
+                                    <use xlink:href="#play"></use>
+                                </svg>Профиль и адреса</a>
+                            <a class="lk-toolbar__el lk-toolbar__el--active" href="#">
+                                <svg class="icon">
+                                    <use xlink:href="#play"></use>
+                                </svg>История заказов</a>
+                            <a class="lk-toolbar__el" href="#">
+                                <svg class="icon">
+                                    <use xlink:href="#play"></use>
+                                </svg>Мои пиццы</a>
+                            <a class="lk-toolbar__el" href="#">
+                                <div class="lk-toolbar__el-text">Бонусы</div>
+                                <div class="bonus-val">240Б</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lk-content">
+                        <div class="title title--lg">История заказов</div>
+                        <div class="history">
+                            <div class="history-card">
+                                <div class="history-card__wrap">
+                                    <div class="history-card__info">
+                                        <div class="history-card__date">28 Сентября, 2017</div>
+                                        <div class="history-card__numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-card__list">
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <div class="history-card__list-el history-card__list-el--last" style="background-image:url('img/card.jpg')">
+                                            <div class="history-card__list-el-val">+2</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-card__price">
+                                        <div class="history-card__price_val">5430 ₴</div>
+                                    </div>
+                                </div>
+                                <div class="history-info">
+                                    <div class="history-info__head">
+                                        <div class="history-info__head-date">28 Апреля 2017</div>
+                                        <div class="history-info__head-state">Доставлен</div>
+                                        <div class="history-info__head-numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info-footer">
+                                        <div class="history-info-total">
+                                            <div class="history-info-total__text">Сумма:</div>
+                                            <div class="history-info-total__val">1 184 ₴</div>
+                                        </div>
+                                        <div class="history-info-get">
+                                            <svg class="icon">
+                                                <use xlink:href="#refresh"></use>
+                                            </svg>
+                                            <span>Повторить заказ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history-card">
+                                <div class="history-card__wrap">
+                                    <div class="history-card__info">
+                                        <div class="history-card__date">28 Сентября, 2017</div>
+                                        <div class="history-card__numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-card__list">
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <div class="history-card__list-el history-card__list-el--last" style="background-image:url('img/card.jpg')">
+                                            <div class="history-card__list-el-val">+2</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-card__price">
+                                        <div class="history-card__price_val">5430 ₴</div>
+                                    </div>
+                                </div>
+                                <div class="history-info">
+                                    <div class="history-info__head">
+                                        <div class="history-info__head-date">28 Апреля 2017</div>
+                                        <div class="history-info__head-state">Доставлен</div>
+                                        <div class="history-info__head-numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info-footer">
+                                        <div class="history-info-total">
+                                            <div class="history-info-total__text">Сумма:</div>
+                                            <div class="history-info-total__val">1 184 ₴</div>
+                                        </div>
+                                        <div class="history-info-get">
+                                            <svg class="icon">
+                                                <use xlink:href="#refresh"></use>
+                                            </svg>
+                                            <span>Повторить заказ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history-card">
+                                <div class="history-card__wrap">
+                                    <div class="history-card__info">
+                                        <div class="history-card__date">28 Сентября, 2017</div>
+                                        <div class="history-card__numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-card__list">
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <div class="history-card__list-el history-card__list-el--last" style="background-image:url('img/card.jpg')">
+                                            <div class="history-card__list-el-val">+2</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-card__price">
+                                        <div class="history-card__price_val">5430 ₴</div>
+                                    </div>
+                                </div>
+                                <div class="history-info">
+                                    <div class="history-info__head">
+                                        <div class="history-info__head-date">28 Апреля 2017</div>
+                                        <div class="history-info__head-state">Доставлен</div>
+                                        <div class="history-info__head-numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info-footer">
+                                        <div class="history-info-total">
+                                            <div class="history-info-total__text">Сумма:</div>
+                                            <div class="history-info-total__val">1 184 ₴</div>
+                                        </div>
+                                        <div class="history-info-get">
+                                            <svg class="icon">
+                                                <use xlink:href="#refresh"></use>
+                                            </svg>
+                                            <span>Повторить заказ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history-card">
+                                <div class="history-card__wrap">
+                                    <div class="history-card__info">
+                                        <div class="history-card__date">28 Сентября, 2017</div>
+                                        <div class="history-card__numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-card__list">
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <div class="history-card__list-el history-card__list-el--last" style="background-image:url('img/card.jpg')">
+                                            <div class="history-card__list-el-val">+2</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-card__price">
+                                        <div class="history-card__price_val">5430 ₴</div>
+                                    </div>
+                                </div>
+                                <div class="history-info">
+                                    <div class="history-info__head">
+                                        <div class="history-info__head-date">28 Апреля 2017</div>
+                                        <div class="history-info__head-state">Доставлен</div>
+                                        <div class="history-info__head-numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info-footer">
+                                        <div class="history-info-total">
+                                            <div class="history-info-total__text">Сумма:</div>
+                                            <div class="history-info-total__val">1 184 ₴</div>
+                                        </div>
+                                        <div class="history-info-get">
+                                            <svg class="icon">
+                                                <use xlink:href="#refresh"></use>
+                                            </svg>
+                                            <span>Повторить заказ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history-card">
+                                <div class="history-card__wrap">
+                                    <div class="history-card__info">
+                                        <div class="history-card__date">28 Сентября, 2017</div>
+                                        <div class="history-card__numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-card__list">
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <a class="history-card__list-el" href="#" style="background-image:url('img/item-1.jpg')">
+                                            <div class="history-card__list-el-val">x2</div>
+                                        </a>
+                                        <div class="history-card__list-el history-card__list-el--last" style="background-image:url('img/card.jpg')">
+                                            <div class="history-card__list-el-val">+2</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-card__price">
+                                        <div class="history-card__price_val">5430 ₴</div>
+                                    </div>
+                                </div>
+                                <div class="history-info">
+                                    <div class="history-info__head">
+                                        <div class="history-info__head-date">28 Апреля 2017</div>
+                                        <div class="history-info__head-state">Доставлен</div>
+                                        <div class="history-info__head-numb">№ 43576</div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info__list">
+                                        <div class="history-info__el">
+                                            <a class="history-info__el-img" href="#" style="background-image:url('img/item-1.jpg')"></a>
+                                            <div class="history-info__el-about">
+                                                <div class="history-info__el-title">Гавайская с курицей</div>
+                                                <div class="history-info__el-text">Традиционное, 35 см</div>
+                                            </div>
+                                            <div class="history-info__el-count">x2</div>
+                                            <div class="history-info__el-price">680 ₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="history-info-footer">
+                                        <div class="history-info-total">
+                                            <div class="history-info-total__text">Сумма:</div>
+                                            <div class="history-info-total__val">1 184 ₴</div>
+                                        </div>
+                                        <div class="history-info-get">
+                                            <svg class="icon">
+                                                <use xlink:href="#refresh"></use>
+                                            </svg>
+                                            <span>Повторить заказ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--block footer-->
+        <div class="footer-wrap">
+            <div class="footer-top-wrap">
+                <div class="main-cont">
+                    <div class="footer-top">
+                        <div class="footer-payment">
+                            <img src="img/payment.svg" alt="" />
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info__title">250 грн</div>
+                            <div class="footer-info__text">минимальная сумма доставки</div>
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info__title">42 минуты</div>
+                            <div class="footer-info__text">среднее время доставки</div>
+                        </div>
+                        <div class="footer-info">
+                            <div class="footer-info__title">бесплатная доставка</div>
+                            <div class="footer-info__text">при заказе на сумму свыше 500 грн</div>
+                        </div>
+                        <a class="footer-map" href="#">
+                            <span>Зона доставки</span>
+                            <div class="footer-map__el" style="background-image:url('img/map.jpg')"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-main-wrap">
+                <div class="main-cont">
+                    <div class="footer-main">
+                        <div class="footer-nav">
+                            <a class="footer-nav__el" href="#">Акции</a>
+                            <a class="footer-nav__el" href="#">Доставка и оплата</a>
+                            <a class="footer-nav__el" href="#">Отзывы</a>
+                            <a class="footer-nav__el" href="#">О компании</a>
+                            <a class="footer-nav__el" href="#">Новости</a>
+                            <a class="footer-nav__el" href="#">Новости</a>
+                            <a class="footer-nav__el" href="#">Наши кафе</a>
+                            <a class="footer-nav__el" href="#">Карьера</a>
+                            <a class="footer-nav__el" href="#">Публичная оферта</a>
+                            <a class="footer-nav__el" href="#">Политика конфиденциальности</a>
+                        </div>
+                        <div class="footer-cont">
+                            <a class="footer-phone" href="tel:8 800 563 56 56">8 800 563 56 56</a>
+                            <a class="footer-mail" href="mailto:pochta@gmail.com">pochta@gmail.com</a>
+                            <div class="footer-loc">Чернівці, проспект Незалежності, 90</div>
+                            <div class="soc-row">
+                                <a class="soc-row__el" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#soc-facebook"></use>
+                                    </svg>
+                                </a>
+                                <a class="soc-row__el" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#soc-instagram"></use>
+                                    </svg>
+                                </a>
+                                <a class="soc-row__el soc-row__el--red" href="#">
+                                    <svg class="icon">
+                                        <use xlink:href="#soc-telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <a class="create" href="#">
+                                <span>Создано в:</span>
+                                <img src="img/jq.svg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--block footer end-->
+    </div>
+    <!--build:js ./js/combined.js-->
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <script src="bower/slick-carousel/slick/slick.js"></script>
+    <script src="bower/fancybox/dist/jquery.fancybox.js"></script>
+    <script src="bower/sticky-kit/jquery.sticky-kit.min.js"></script>
+    <!--script(src='bower/jquery.nicescroll/jquery.nicescroll.min.js')-->
+    <script src="bower/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="bower/ion.rangeSlider/js/ion.rangeSlider.js"></script>
+    <!-- endbuild-->
+    <script src="./js/add-on.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-edit.js"></script>
+</body>
+
+</html>

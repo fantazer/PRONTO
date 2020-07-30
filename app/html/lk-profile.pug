@@ -1,0 +1,67 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.page--gray
+	+header()
+	.content.content--gray
+		.main-cont
+			+bread()
+			.lk
+				.lk-toolbar
+					.lk-toolbar-wrap
+						a(href="#").lk-toolbar__el.lk-toolbar__el--active
+							+icon("play","icon")
+							| Профиль и адреса
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| История заказов
+						a(href="#").lk-toolbar__el
+							+icon("play","icon")
+							| Мои пиццы
+						a(href="#").lk-toolbar__el
+							.lk-toolbar__el-text Бонусы
+							.bonus-val 240Б
+				.lk-content
+					.title.title--lg Профиль
+					.lk-profile
+						.lk-profile-info
+							.profile__img
+								//for user img
+								.profile__img-el(style="background-image:url('img/user.jpg')").hidden
+								.profile__img-icon
+									+icon("user","icon")
+								.profile__img-load
+									.profile__img-load-icon
+										+icon("upload","icon")
+							.lk-profile-info__el.type--md.type--bold Константинопольский Владислав
+							.lk-profile-info__el 8 318 313 43 54
+							.lk-profile-info__el prosto@gmail.com
+							.lk-profile-info__el 06.09.1991
+
+
+							.title.title--md Мои адреса
+							.lk-adress__el
+								.lk-adress__type Дом
+								.lk-adress__val Москва, ул. Петропавловская, д. 101
+								.lk-adress-footer
+									.lk-adress-footer__el.lk-adress-edit
+										+icon("edit","icon")
+										span Редактировать
+									.lk-adress-footer__el.lk-adress-remove
+										+icon("delete","icon")
+										span Удалить
+							.lk-adress__add
+								+icon("plus","icon")
+								span Добавить адрес
+						.lk-profile-nav
+							.lk-profile-nav__el
+								.lk-profile-nav__el-icon
+									+icon("edit","icon")
+								.lk-profile-nav__el-text Редактировать личные данные
+							.lk-profile-nav__el
+								.lk-profile-nav__el-icon
+									+icon("exit","icon")
+								.lk-profile-nav__el-text Выход
+
+	+footer()
+include ./block_html/_script.pug

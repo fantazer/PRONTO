@@ -1,0 +1,24 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page
+	+header()
+	.content
+		.main-cont
+			+bread()
+			.title-row.title-row--btn
+				.title-row-info
+					.title.title--lg Наши кафе
+				.btn--sm.btn--mark Забронировать столик
+			.map
+				.map__el(style="background-image:url('img/map-full.jpg')")
+			.restaurant
+				- for (var i=0;i<5;i++)
+					.restaurant-item
+						a(href="#" style="background-image:url('img/restaurant-item-1.jpg')").restaurant-item__img
+						.restaurant-item__cont
+							a(href="#").restaurant-item__title ул. Глушко, д 17
+							.restaurant-item__time 11:00 - 24:00 (Вс - Чт)
+							.restaurant-item__time 11:00 - 01:00 (Пт - Сб)
+	+footer()
+include ./block_html/_script.pug

@@ -14,7 +14,7 @@ mixin checkbox(text,disable)
       label.style-label.style-label--checkbox
         input(type="checkbox").style-input
         .style-input-element
-          +icon("checked","icon-check")
+          +icon("checked","icon")
         .style-input-text=text
 mixin radio(text,group,checked)
   .check-el
@@ -41,7 +41,7 @@ mixin bread()
     .bread__el Товар
 
 mixin product(img="item-1.jpg",size)
-  .product-el.js-switch-parrent
+  .product-el.js-slide-parrent
     .product-el--add
       +icon("cart-empty","icon")
       .product-el--add-val 2
@@ -52,10 +52,10 @@ mixin product(img="item-1.jpg",size)
       .product-box
         .product__text Свежеиспечённый ржаной хлеб на молочной закваске с добавлением мёда
       .product-conf
-        .product-conf__el.js-switch(data-item="border" )
+        .product-conf__el.js-slide(data-item="border" )
           +icon("plus","icon")
           span бортик
-        .product-conf__el.js-switch(data-item="sauce" )
+        .product-conf__el.js-slide(data-item="sauce" )
           +icon("plus","icon")
           span соус
       .size
@@ -67,7 +67,7 @@ mixin product(img="item-1.jpg",size)
         //.product-weight 300 гр
         .item-add
           +incr(false,"incr--single incr--mark-light ")
-    .product-slide.js-switch-cont(data-item="border")
+    .product-slide.js-slide-cont(data-item="border")
       .product-slide-wrap
         .product-slide__close.js-product-slide__close
           +icon("close","icon")
@@ -100,7 +100,7 @@ mixin product(img="item-1.jpg",size)
                 .product-slide__info
                   .product-slide__val Мисливський бортик
                   .product-slide__cost 34 ₴
-    .product-slide.js-switch-cont(data-item="sauce")
+    .product-slide.js-slide-cont(data-item="sauce")
       .product-slide-wrap
         .product-slide__close.js-product-slide__close
           +icon("close","icon")
@@ -127,7 +127,7 @@ mixin product(img="item-1.jpg",size)
               .product-slide__cost 0 ₴
 
 mixin product-sm(img="item-1.jpg",size)
-  .product-el.js-switch-parrent
+  .product-el.product-el--sm.js-slide-parrent
     .product-el--add
       +icon("cart-empty","icon")
       .product-el--add-val 2
@@ -138,4 +138,4 @@ mixin product-sm(img="item-1.jpg",size)
       .product-footer
         .product-price 250 ₴
         .item-add
-          +incr(false,"incr--single incr--mark-light ")
+          +incr(false,"incr--single incr--mdx incr--mark-light ")

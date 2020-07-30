@@ -27,24 +27,24 @@ mixin header(type)
 						a(href="#").lang__el Рус
 				// header-top === end
 		// main-header
-		.main-cont
-			.header
-				a(href="/").logo
-					if(type)
-						img(src="img/logo--white.svg", alt="")
-					else
-						img(src="img/logo.svg", alt="")
-				.header-nav
-					a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
-					a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши
-					a(href="#").header-nav__el Салаты
-					a(href="#").header-nav__el Вторые блюда
-					a(href="#").header-nav__el Соусы
-					a(href="#").header-nav__el Напитки
-				a(href="#").header-cart
-					+icon("cart","icon")
-					.header-cart__cost 1249 р
-					.header-cart__size 5
-
+		.header-main-wrap
+			.main-cont
+				.header
+					a(href="/").logo
+						if(type)
+							img(src="img/logo--white.svg", alt="")
+						else
+							img(src="img/logo.svg", alt="")
+					.header-nav
+						a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
+						a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши
+						a(href="#").header-nav__el Салаты
+						a(href="#").header-nav__el Вторые блюда
+						a(href="#").header-nav__el Соусы
+						a(href="#").header-nav__el Напитки
+					a(href="#").header-cart
+						+icon("cart","icon")
+						.header-cart__cost 1249 р
+						.header-cart__size 5
 		// main-header === end
 	//block header end
