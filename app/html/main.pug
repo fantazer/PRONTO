@@ -12,6 +12,7 @@ include block_html/_include.pug
 			- for (var i=0;i<4;i++)
 				.main-slider__el-wrap
 					a(href="#" style="background-image:url('img/slide-1.jpg')").main-slider__el.main-slider__el--md
+					a(href="#" style="background-image:url('img/slide-2.jpg')").main-slider__el.main-slider__el--sm
 	.content
 		.main-cont
 			.kind
@@ -59,7 +60,7 @@ include block_html/_include.pug
 			// sale-list
 			.section
 				.title.title--xl.type--center Акции
-				.sale-list
+				.sale-items
 					-
 						var items = [
 							'Скидка в день рождения!',
@@ -68,10 +69,10 @@ include block_html/_include.pug
 							'29 хв/59 хв – або піца безкоштовно!'
 							];
 					each item,i in items
-						.sale-list__el
-							.sale-list__el-img(style="background-image:url('img/sale-el-"+(i+1)+".jpg')")
-							.sale-list__el-info
-								a(href="#").sale-list__el-title #{item}
+						.sale-items__el
+							.sale-items__el-img(style="background-image:url('img/sale-el-"+(i+1)+".jpg')")
+							.sale-items__el-info
+								a(href="#").sale-items__el-title #{item}
 								a(href="#").icon-round.icon-round--mark
 									+icon("arrow-right-fat","icon")
 			// sale-list === end

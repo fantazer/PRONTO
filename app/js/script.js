@@ -350,4 +350,28 @@ $(document).ready(function () {
 	});
 	// rating === end
 
+	// slide menu
+	$('.js-slide-block-toggle').click(function (event) {
+		$(".js-slide-block-toggle").not(this).removeClass('slide-block-toggle--open');
+		var current = $(this).data("menu");
+		$(".slide-block").each(function () {
+			if ($(this).data("menu") === current) {
+				$(this).toggleClass("slide-block--open")
+			} else {
+				$(this).removeClass("slide-block--open")
+			}
+		})
+		$(this).toggleClass('slide-block-toggle--open');
+		event.stopPropagation();
+	});
+
+	$('.slide-block').on("click", function (event) {
+		event.stopPropagation();
+	});
+
+	$(document).on("click", function () {
+		$('.slide-block').removeClass('slide-block--open');
+		$(".js-slide-block-toggle").removeClass('slide-block-toggle--open');
+	});
+	// slide menu === end
 });

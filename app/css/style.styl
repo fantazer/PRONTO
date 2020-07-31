@@ -58,6 +58,8 @@ body
 	.footer-top-wrap
 		background: white
 .content
+	+below(768px)
+		padding:30px 0
 	flex-grow 1
 	padding: 50px 0 100px 0
 .content--mid
@@ -86,7 +88,8 @@ body
 	.header-top-wrap
 		display none
 	.header
-		padding: 10px 0
+		+above(1281px)
+			padding: 10px 0
 // animate top menu === end
 
 // error
@@ -423,6 +426,8 @@ body
 //Навигация внутри
 .slider-wrap--inarrow
 	.slider-control
+		+below(678px)
+			display none
 		flex(mid)
 		tr(all)
 		cp()
@@ -472,6 +477,10 @@ body
 	.slick-active
 		.dot
 			opacity: 1
+
+.slick-dotted.slick-slider
+	margin-bottom: 0
+
 //=== Внешний вид пагинации end===
  
 
@@ -497,8 +506,8 @@ body
 
 // main slider
 .main-slider__el
-	+below(768px)
-		padding: 25% 10%
+	+below(640px)
+		padding: 60% 10%
 	display: block
 	bg-full()
 	padding: 16% 10%
@@ -506,10 +515,10 @@ body
 	width: 100%
 
 .main-slider__el--md
-	+below(768px)
+	+below(640px)
 		display none
 .main-slider__el--sm
-	+above(769px)
+	+above(640px)
 		display none
 
 .main-slider
@@ -521,6 +530,8 @@ body
 // header
 //.header-wrap
 .header-top-wrap
+	+below(1280px)
+		display none
 	background: $snow
 //.main-cont
 .header-top
@@ -565,6 +576,14 @@ body
 		tr()
 	&:hover
 		color $mark
+.auth.active
+	.auth-img
+		display block
+.auth-img
+	display none
+	size 24px
+	round()
+	bg-full()
 .lang
 	f()
 .lang__el
@@ -574,12 +593,29 @@ body
 	color black
 
 .header-main-wrap
+	+below(1280px)
+		.main-cont
+			max-width 100%
+			width: 100%
+			padding: 0
 	box-shadow 0 5px 10px rgba(0, 0, 0, 0.05)
 .header
+	+below(1280px)
+		height: 50px
+		padding: 0
+		justify-content: flex-start
 	flex(between)
 	padding: 20px 0
-//.logo
+.logo
+	+below(1280px)
+		width: 15%
+		margin-right auto
+		min-width 150px
+	+below(640px)
+		min-width 130px
 .header-nav
+	+below(1280px)
+		display none
 	flex(between)
 	width: 54%
 .header-nav__el
@@ -597,31 +633,210 @@ body
 	&:hover
 		color $red
 .header-cart
+	+below(1280px)
+		margin-right: 20px
+	+below(640px)
+		margin-right: 5px
+		height: 100%
+		border-left 1px solid $border-color
+		padding-left: 5px
+	position relative
 	f()
 	align-items center
 	.icon
+		+below(640px)
+			margin-right: 0
 		fill $mark
 		margin-right: 15px
 		size 30px
 .header-cart__cost
+	+below(640px)
+		display none
 	font-weight 700
 .header-cart__size
+	+below(1280px)
+		size 20px
+		font-size: 12px
+		transform translateY(-10px)
+		margin-left: 5px
+	+below(640px)
+		position absolute
+		top 5px
+		right: -5px
+		transform translateY(0px)
+		size 16px
+		font-size: 10px
 	size 50px
 	background: $red
 	color white
 	flex(mid)
 	round()
 	margin-left: 10px
+
+.header-menu
+	+above(1281px)
+		display none
+	+below(640px)
+		width: auto
+		margin-right: 5px
+	flex(mid)
+	width: 150px
+	height: 100%
+	border-right 1px solid $border-color
+	margin-right: 20px
+.header-menu-btn
+	+below(1280px)
+		width: 100%
+		br(0)
+		height: 100%
+		flex(mid)
+	+below(640px)
+		padding: 0
+		width: 50px
+		span
+			display none
+	@extend .btn--mark
+	@extend .btn--md
+	f()
+	align-items center
+	padding: 12px 20px
+	line-height: 1
+	.icon
+		+below(640px)
+			margin-right: 0
+		fill white
+		size 20px
+		margin-right: 10px
+
+.header-nav-toggle
+	+above(1281px)
+		display none
+	flex(mid)
+	size 50px
+	border-left 1px solid $border-color
+	.icon
+		size 24px
+.is-open
+	display none
+
+.slide-block-toggle--open
+	.is-close
+		display none!important
+	.is-open
+		display block!important
+	.header-cart__icon
+		.is-close
+			display none
 // header === end
+
+// slide menu
+.slide-block
+	+below(1280px)
+		top: 50px //Высота хедера
+		height: calc(100% - 50px)
+	+below(480px)
+		width: 100%
+	position: fixed
+	top 90px
+	width: 360px
+	tr(all)
+	border-right 1px solid $border-color
+	height: calc(100% - 90px)
+	background: white
+	z-index 100
+.slide-block-wrap
+	overflow-y auto
+	height: 100%
+	padding: 10%
+	.header-location
+		margin-bottom: 20px
+	.auth
+		margin:0 0 20px 0
+	.size
+		margin-bottom: 20px
+.slide-menu__list
+	f()
+	fl()
+	align-items: flex-start
+	.header-nav__el
+		display inline
+		margin-bottom: 20px
+		padding-left: 30px
+
+.slide-menu-nav__el
+	display block
+	margin-bottom: 20px
+
+.header-nav__el--light
+	font-weight: 400
+.slide-block--left
+	left 0
+	transform translateX(-100%)
+
+.slide-block--right
+	right 0
+	transform translateX(100%)
+
+.slide-block--open
+	transform translateX(0%)
+
+.slide-block--cart
+	border-left 1px solid $border-color
+
+.slide-menu__list-el
+	display: block
+	margin-bottom: 10px
+	tr(all)
+	color $dark
+	@extend .type--md
+	font-weight 700
+	&:hover
+		color red
+.body-fix
+	position: fixed!important
+	overflow-Y: scroll!important
+	width:100%!important
+
+.header-contact
+	f()
+	align-items center
+	margin-bottom: 20px
+	.icon
+		fill $mark
+		size 24px
+		margin-right: 15px
+
+.header-contact__phone
+	@extend .type--md
+	color $dark
+	white-space nowrap
+	font-weight 700
+	display inline-block
+	margin-bottom: 5px
+	&:hover
+		color $mark
+.header-contact__time
+	+below(1560px)
+		font-size: 12px
+		white-space nowrap
+	color $gray
+	whtie-space nowrap
+
+// slide menu === end
 
 
 .kind
+	+below(640px)
+		grid-template-columns: repeat(2, 1fr)
+		grid-gap 10px
+		margin-bottom: 15px
 	display: grid
 	grid-gap 20px
-	//grid-template-columns: repeat(, fr)
-	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
+	grid-template-columns: repeat(4, 1fr)
 	margin-bottom: 30px
 .kind__el
+	+below(640px)
+		br(10px)
 	position relative
 	bg-full()
 	padding: 50% 10%
@@ -629,6 +844,8 @@ body
 	br(28px)
 	bsh-hover()
 .kind__el-title
+	+below(1024px)
+		font-size: 16px
 	position absolute
 	bottom 0
 	left 0
@@ -643,6 +860,10 @@ body
 	flex(mid)
 	margin-bottom: 50px
 .kind__sm-el
+	+below(640px)
+		width: 50%
+		padding: 15px 5px
+		font-size: 16px
 	@extend .btn--sm
 	color white
 	font-weight 700
@@ -689,6 +910,8 @@ body
 		margin: 10px
 
 .product-el
+	+below(480px)
+		flex-flow row
 	br(25px)
 	tr(all)
 	overflow: hidden
@@ -696,6 +919,7 @@ body
 	position: relative
 	f()
 	fl()
+	border 1px solid #f7f7f7
 
 .product-el--sm
 	.product-footer
@@ -705,6 +929,9 @@ body
 	.product__title
 		font-size: 18px
 .product__img
+	+below(480px)
+		size 90px
+		margin: 5px
 	flex(mid)
 	position relative
 	overflow: hidden
@@ -749,6 +976,11 @@ body
 	.product__img-el
 		padding: 35% 10%
 .product__cont
+	+below(480px)
+		width calc(100% - 100px)
+		.size
+			display none
+		padding:10px 10px 10px 0
 	f()
 	fl()
 	flex-grow 1
@@ -775,6 +1007,9 @@ body
 	margin-bottom:auto
 
 .product__text
+	+below(480px)
+		margin-bottom: 0
+		font-size: 12px
 	opacity .8
 	line-height: 1.6
 	tr()
@@ -810,6 +1045,8 @@ body
 	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
 	grid-gap 30px
 .product-footer
+	+below(480px)
+		margin-top: 10px
 	flex(between)
 	margin-top: 20px
 .product-price
@@ -819,6 +1056,8 @@ body
 		font-size: 24px
 	+below(640px)
 		font-weight: 700
+	+below(480px)
+		font-size: 16px
 	@extend .type--md
 	background-color #ffffff
 	font-weight 700
@@ -848,6 +1087,10 @@ body
 		background: $mark
 
 .product-el--add
+	+below(480px)
+		left 10px
+		right initial
+
 	br(10px)
 	padding: 5px 10px
 	flex(mid)
@@ -1015,22 +1258,34 @@ body
 // size === end
 
 // sale-list
-.sale-list
+.sale-items
+	+below(480px)
+		grid-template-columns: 1fr
+
 	display: grid
 	grid-gap 30px
 	grid-template-columns: repeat(auto-fill, minmax(25rem,1fr))
-.sale-list__el
+.sale-items__el
+	align-items: flex-start
 	f()
 
-.sale-list__el-img
+.sale-items__el-img
+	+below(480px)
+		width: 40%
+		padding: 15%
 	bg-full()
 	padding: 10%
 	width: 35%
 	margin-right: 20px
 	br(20px)
-.sale-list__el-info
+.sale-items__el-info
+	+below(480px)
+		width 65%
 	width calc(100% - 35% - 20px)
-.sale-list__el-title
+.sale-items__el-title
+	+below(480px)
+		line-height: 1.4
+		font-size: 14px
 	@extend .type--md
 	font-weight 700
 	margin-bottom: 10px
@@ -1038,11 +1293,15 @@ body
 // sale-list === end
 
 .icon-round
+	+below(480px)
+		size 32px
 	size 44px
 	flex(mid)
 	round()
 	tr()
 	.icon
+		+below(480px)
+			size 12px
 		tr()
 		size 14px
 .icon-round--mark
@@ -1055,9 +1314,14 @@ body
 			fill white
 
 .section
+	+below(768px)
+		margin: 30px 0
 	margin: 50px 0
 
 .gallery
+	+below(768px)
+		grid-template-columns: repeat(auto-fill, minmax(8rem,1fr))
+		grid-gap 10px
 	display: grid
 	grid-gap 20px
 	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
@@ -1105,17 +1369,25 @@ body
 .footer-top-wrap
 	background: $snow
 .footer-top
-	//padding: 20px 0
+	+below(1024px)
+		fw()
 	f()
 	align-items center
 	justify-content space-between
 	min-height 80px
 //.footer-wrap
 //.main-cont
-//.footer-top
+
 .footer-payment
+	+below(1280px)
+		display none
 	margin-right: 10px
 .footer-info
+	+below(1024px)
+		margin-right: 0
+		padding: 20px 0
+	+below(640px)
+		width: 100%
 	margin-right: 10px
 .footer-info__title
 	font-weight:700
@@ -1124,6 +1396,10 @@ body
 	color $gray
 	@extend .type--sm
 .footer-map
+	+below(1024px)
+		width: calc(100% + 20px)
+		margin-left: -10px
+		margin-right: -10px
 	width: 20%
 	tr()
 	padding: 30px 35px
@@ -1152,26 +1428,47 @@ body
 .footer-main
 	padding: 30px 0
 .footer-nav
+	+below(1280px)
+		display none
 	flex(between)
 	margin-bottom: 30px
 .footer-nav__el
 	@extend .type--sm
 .footer-cont
+	+below(1280px)
+		fw()
+	+below(640px)
+		.soc-row
+			width: 100%
+			margin-bottom: 10px
 	flex(between)
 .footer-phone
+	+below(960px)
+		width: 100%
+		margin-bottom: 10px
 	font-weight:700
 
-//.footer-mail
-//.footer-loc
+.footer-mail
+	+below(960px)
+		width: 100%
+		margin-bottom: 10px
+.footer-loc
+	+below(960px)
+		width: 100%
+		margin-bottom: 10px
 //.icon
 .create
 	flex(mid)
 	span
+		+below(640px)
+			width: 100%
 		@extend .type--sm
 		display inline-block
 		margin-right: 10px
 
 .product-conf
+	+below(480px)
+		display none
 	f()
 	align-items center
 	margin-bottom: 15px

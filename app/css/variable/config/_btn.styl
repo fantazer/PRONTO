@@ -133,6 +133,8 @@
 	f()
 	position relative
 .incr__nav
+	+below(480px)
+		size 30px
 	flex(mid)
 	tr(all)
 	size 40px
@@ -140,6 +142,8 @@
 	background white
 	round()
 	.icon
+		+below(480px)
+			size 12px
 		size 14px
 		fill $gray
 		tr()
@@ -151,6 +155,8 @@
 	&:active
 		background-color darken($mark,10)
 .incr__val
+	+below(480px)
+		padding: 0 10px
 	flex(mid)
 	//background white
 	position relative

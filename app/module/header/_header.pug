@@ -19,6 +19,8 @@ mixin header(type)
 						a(href="#").nav-top__el Отзывы
 						a(href="#").nav-top__el Кафе
 					.auth.icon-row
+						//toggle class .auth + .active to auth-img show
+						.auth-img(style="background-image:url('img/user.jpg')")
 						+icon("user","icon icon--md icon--gray icon--right")
 						span Профиль
 					.lang
@@ -30,6 +32,11 @@ mixin header(type)
 		.header-main-wrap
 			.main-cont
 				.header
+					.header-menu.js-slide-block-toggle(data-menu="menu")
+						.header-menu-btn
+							+icon("chef","icon is-close")
+							+icon("close","icon is-open")
+							span Меню
 					a(href="/").logo
 						if(type)
 							img(src="img/logo--white.svg", alt="")
@@ -46,5 +53,74 @@ mixin header(type)
 						+icon("cart","icon")
 						.header-cart__cost 1249 р
 						.header-cart__size 5
+					.header-nav-toggle.js-slide-block-toggle(data-menu="nav")
+						+icon("menu","icon is-close")
+						+icon("close","icon is-open")
+	//slide block cart
+	.slide-block.slide-block--left.slide-block--menu(data-menu="menu")
+		.slide-block-wrap.scroll
+			.slide-menu__list
+				a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
+				a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши
+				-
+					var items = [
+						'Ура маки',
+						'Футо маки',
+						'Набори суші',
+						'Нігірі',
+						'Хосомакі'
+						];
+				each item in items
+					a(href="#").header-nav__el.header-nav__el--light  #{item}
+				a(href="#").header-nav__el Салаты
+				a(href="#").header-nav__el Вторые блюда
+				a(href="#").header-nav__el Соусы
+				a(href="#").header-nav__el Напитки
+
+
+	//slide block nav
+	.slide-block.slide-block--right.slide-block--menu(data-menu="nav")
+		.slide-block-wrap.scroll
+			.header-contact
+				+icon("phone","icon")
+				.header-contact__info
+					a(href="tel:8 495 123 45 67").header-contact__phone 8 495 123 45 67
+					.header-contact__time заказывайте с 10 до 20
+			.header-location
+				+icon("location","icon icon--md icon--mark icon--right")
+				span Івано-Франківськ
+			.auth.icon-row
+				//toggle class .auth + .active to auth-img show
+				.auth-img(style="background-image:url('img/user.jpg')")
+				+icon("user","icon icon--md icon--gray icon--right")
+				span Профиль
+			.slide-menu-nav
+				-
+					var items = [
+						'Акции',
+						'Доставка и оплата',
+						'Отзывы',
+						'Кафе',
+						'О компании',
+						'Новости',
+						'Карьера',
+						];
+				each item in items
+					a(href="#").slide-menu-nav__el #{item}
+				a(href="#").slide-menu-nav__el Публичная оферта
+				a(href="#").slide-menu-nav__el Политика конфиденциальности
+
+			.size
+				.size__el.size__el--active Укр
+				.size__el Eng
+				.size__el Рус
+
+			.soc-row
+				a(href="#").soc-row__el
+					+icon("soc-facebook","icon")
+				a(href="#").soc-row__el
+					+icon("soc-instagram","icon")
+				a(href="#").soc-row__el.soc-row__el--red
+					+icon("soc-telegram","icon")
 		// main-header === end
 	//block header end
