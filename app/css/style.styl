@@ -151,12 +151,17 @@ body
 	position: absolute
 	opacity 0
 	transition transform .6s, opacity .8s
-	max-width 400px
+	width 420px
 	left -9999px
 	top -9999px
 	.order__row
 		margin-bottom: 20px
 		border-bottom 0
+
+.modal--xl
+	+below(960px)
+		width: 100%
+	width 860px
 
 .modal-content
 	+below(640px)
@@ -169,6 +174,15 @@ body
 	position: relative
 	padding: 40px 45px
 	br(40px)
+.modal-content--dark
+	background: black
+	.modal-title
+		color white
+	.modal-text
+		color white
+.modal-img
+	margin: 0 auto 20px auto
+	flex(mid)
 
 .modal__show
 	max-height 100%
@@ -182,26 +196,23 @@ body
 	will-change: transform, opacity
 
 .modal-close
-	+below(768px)
-		top 12px
-		right 12px
-	position: absolute
-	top: 20px
-	right: 20px
-	cp()
-	size 50px
-	br(20px)
+	position absolute
+	size 60px
+	top 0
+	right: 0
 	flex(mid)
-	z-index 10
-	background: #f8f8f8
+	cp()
+	tr()
+	background-color $gray-light
+	border-radius 0 25px 0 60px
+	z-index 30
 	&:hover
-		.icon
-			opacity: 1
+		background: $gray
 	.icon
-		tr()
 		size 12px
-		fill black
-		opacity:.3
+		margin-top: -5px
+		margin-right: -10px
+
 
 .modal-hide-animation
 	transform scale(.9)
@@ -229,7 +240,7 @@ body
 		font-size: 20px
 	margin-bottom: 20px
 	text-align: center
-	@extend .type--xl
+	@extend .type--lg
 	font-weight: 700
 
 .modal-text
@@ -238,6 +249,7 @@ body
 		font-size: 12px
 	text-align: center
 	margin: 20px auto
+	@extend .type--sm
 	//width: 80%
 	line-height: 1.6
 
@@ -246,6 +258,19 @@ body
 	@extend .btn--md
 	@extend .btn--mark
 	width: 100%
+
+.modal-link
+	color $brown
+	border-bottom 1px dashed $brown
+	display table
+	margin: 20px auto 0 auto
+	cp()
+.modal-link--auth
+	margin: 0
+	margin-top: -10px
+	margin-bottom: 20px
+	cp()
+
 // modal === end
 
 // cookie
@@ -2992,3 +3017,149 @@ select.select-beauty
 		background: $mark
 
 // bonus === end
+
+// location modal
+.city-search
+	f()
+	margin-bottom: 20px
+	align-items center
+	.input
+		border-radius 0
+		border 0
+		border-bottom 1px solid $border-color
+		width: 100%
+		padding-left: 0
+.search__icon
+	cp()
+	&:hover
+		fill $mark
+	.icon
+		size 28px
+.city-popular
+	f()
+	fw()
+	margin-bottom: 20px
+.city-popular__el
+	cp()
+	tr()
+	margin-right: 20px
+	font-weight 700
+	&:hover
+		color $mark
+
+.city-list
+	+below(1024px)
+		column-count 3
+	+below(768px)
+		column-count 2
+	column-count 3
+.city-wrap
+	height: 250px
+	position relative
+.city-list-col
+	f()
+	margin-bottom: 10px
+	align-items:flex-start
+
+.city-list-letter
+	+below(640px)
+		margin-right: 10px
+		size 20px
+		font-size:14px
+	color $mark
+	margin-right: 30px
+	@extend .type--md
+	font-weight 700
+//.city-list-list
+.city-list-el
+	+below(640px)
+		font-size: 10px
+	margin-bottom: 5px
+	color $black
+	display: block
+	@extend .type--sm
+	&:hover
+		color $red
+.city-list-el--active
+	font-weight: 700
+// location modal === end
+
+// item mobile
+.item-mobile
+	+below(640px)
+		fw()
+	f()
+	justify-content space-between
+	align-items: flex-start
+.item-mobile__img
+	+below(640px)
+		width: 100%
+		padding: 45% 10%
+		margin-bottom: 30px
+	width: 33%
+	bg-full()
+	padding: 15% 10%
+	position relative
+	br(20px)
+	.product-el--add
+		left 10px
+		right initial
+.item-mobile__info
+	+below(640px)
+		width: 100%
+		padding-right: 0
+	width: 60%
+.item-mobile__title
+	+below(480px)
+		font-size: 26px
+	@extend .type--lg
+	font-weight 700
+	margin-bottom: 10px
+.item-mobile__descr
+	line-height: 1.6
+	margin-bottom: 10px
+
+.item-mobile-footer
+	+below(640px)
+		fw()
+		.incr-btn--fix
+			width: 100%
+			margin-top: 20px
+	f()
+	align-items center
+	margin: 20px 0
+.item-mobile-price
+	@extend .type--lg
+	font-weight 700
+	margin-right: 10px
+.item-mobile-weight
+	color $gray
+	margin-right auto
+// item mobile === end
+
+// review modal
+.get-rating
+	f()
+	align-items: center
+	.icon
+		cp()
+	margin-bottom: 20px
+.get-rating-text
+	+below(640px)
+		font-size: 13px
+	margin-right: 20px
+	font-weight: 700
+
+.star-el--active
+	.icon
+		fill red!important
+
+.star
+	f()
+	.icon
+		size 20px
+		cp()
+		fill $border-color
+.star-el
+	margin-right: 5px
+// review modal === end

@@ -323,4 +323,31 @@ $(document).ready(function () {
 	});
 	//history accord===end
 
+	// template scroll
+	var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+	if(!isMac) {
+		$(".scroll").niceScroll({
+			autohidemode: false,
+			cursorcolor: "#dcdcdc",
+			scrollspeed: 160, // scrolling speed
+			mousescrollstep: 10,
+		});
+	}
+	// template scroll === end
+
+	// rating
+	$('.star--edit .star-el').hover(function () {
+		if (!$(this).parent().hasClass('star--fix')) {
+			$('.star .star-el').removeClass('star-el--active');
+			$(this).addClass('star-el--active');
+			$(this).prevAll('.star-el').addClass('star-el--active')
+		}
+	});
+	$('.star--edit .star-el').click(function () {
+		$(this).parent().toggleClass('star--fix');
+		$(this).addClass('star-el--active');
+		$(this).prevAll('.star-el').addClass('star-el--active')
+	});
+	// rating === end
+
 });
