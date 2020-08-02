@@ -325,7 +325,7 @@ $(document).ready(function () {
 
 	// template scroll
 	var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
-	if(!isMac) {
+	if(!isMac && window.width > 640) {
 		$(".scroll").niceScroll({
 			autohidemode: false,
 			cursorcolor: "#dcdcdc",
@@ -374,4 +374,15 @@ $(document).ready(function () {
 		$(".js-slide-block-toggle").removeClass('slide-block-toggle--open');
 	});
 	// slide menu === end
+
+	// scroll to id
+	$("a[rel='m_PageScroll2id']").mPageScroll2id({
+		offset:80,
+		highlightClass:"left-nav-el-active",
+		onComplete: function () {
+			$('.slide-block').removeClass('slide-block--open');
+			$('.head-toggle').removeClass('slide-block-toggle--open');
+		}
+	});
+	// scroll to id === end
 });
