@@ -11,23 +11,29 @@ include block_html/_include.pug
 			.product-filter
 				-
 					var items = [
-						'Ура маки','Футо маки','Набори суші','Нігірі','Хосомакі'
-						];
-				each item in items
-					.btn--sm.btn--empty #{item}
+						{name: "Ура маки", id: "#ura"},
+						{name: "Футо маки", id: "#futo"},
+						{name: "Нігірі", id: "#higi"},
+						{name: "Набори суші", id: "#nabor"},
+						{name: "Хосомакі", id: "#hoso"},
+					];
+				-
 
-			.title.title--xl.type--center Ура маки
+				each item in items
+					a(href = item.id rel = 'm_PageScroll2id' ).btn--sm.btn--empty #{item.name}
+
+			.title.title--xl.type--center#ura Ура маки
 			.product-descr Роли загорнені в рис з листочком норі та начинкою в середині (8 штук)
 			.product-cont
 				- for (var i=0;i< 7;i++)
 					+product("item-2.jpg")
 
-			.title.title--xl.type--center Набори суші
+			.title.title--xl.type--center#futo Футо маки
 			.product-cont.product-cont--three
 				- for (var i=0;i< 6;i++)
 					+product("item-5.jpg","lg")
 
-			.title.title--xl.type--center Нігірі
+			.title.title--xl.type--center#higi Нігірі
 			.product-descr Подовжені кульки рису з соусом, покриті шматочками риби. внутрішню частину риби ми змащуємо васабі, для більш насиченого смаку.
 			.product-cont
 				- for (var i=0;i< 7;i++)

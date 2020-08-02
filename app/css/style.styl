@@ -51,7 +51,14 @@ body
 		background: #2a2a2a
 	.shrink
 		box-shadow none
-
+	.header-nav-toggle
+		border-color #5d5d5d
+		.icon
+			fill white
+	.header-menu
+		border 0
+	.header-cart
+		border-color #5d5d5d
 .page--gray
 	.content
 		background: #f8f8f8
@@ -83,7 +90,7 @@ body
 	width 100%
 	margin 0
 	animation:  slideInDown  1s 1 ease-in-out;
-	z-index 20
+	z-index 200
 	bsh()
 	.header-top-wrap
 		display none
@@ -902,14 +909,26 @@ body
 	line-height: 1.6
 
 .product-filter
+	+below(768px)
+		flex-wrap nowrap
+		width 100%
+		overflow auto
+		align-items: initial
+		justify-content:initial
 	margin: 10px auto
 	max-width 768px
 	flex(mid)
 	fw()
 	.btn--sm
+		+below(768px)
+			white-space nowrap
+			display inline-block
 		margin: 10px
 
 .product-el
+
+	+below(640px)
+		border-radius 10px
 	+below(480px)
 		flex-flow row
 	br(25px)
@@ -921,6 +940,19 @@ body
 	fl()
 	border 1px solid #f7f7f7
 
+.product-el--banner
+	+below(640px)
+		fl()
+		.product__img
+			width: 100%
+			height: auto
+			margin: 0
+		.product__img-el
+			padding: 30% 10%
+			width: 100%
+		.product__cont
+			width: 100%
+			padding: 10px
 .product-el--sm
 	.product-footer
 		margin-top: 0
@@ -980,12 +1012,14 @@ body
 		width calc(100% - 100px)
 		.size
 			display none
-		padding:10px 10px 10px 0
+		padding:10px
 	f()
 	fl()
 	flex-grow 1
 	padding: 20px 18px
 .product__img-el
+	+below(640px)
+		br(10px)
 	tr(all)
 	width: 100%
 	height: 100%
@@ -1112,6 +1146,8 @@ body
 
 // product slider
 .product-slide
+	+below(640px)
+		display none!important
 	position absolute
 	top 0
 	left 0
@@ -1203,7 +1239,8 @@ body
 		background: $mark
 		color white
 	.size__el
-		border-right 1px solid $mark
+		+above(641px)
+			border-right 1px solid $mark
 		&:last-child
 			border 0
 
@@ -1545,18 +1582,29 @@ body
 // structure === end
 
 .item-wrap
+	+below(768px)
+		fw()
 	f()
 	justify-content space-between
 	align-items: flex-start
 	margin-bottom: 50px
 .item-col
+	+below(768px)
+		width: 100%
+		margin 0 auto 30px auto
 	width: 45%
 .item-img
 	bg-full()
 	padding: 50% 10%
 	br(30px)
 .item-info
+	+below(768px)
+		min-width 100%
+		width: 100%
+		margin-left: 0
+	min-width 500px
 	width calc(55% - 50px)
+	margin-left: 20px
 .item-descr
 	margin-bottom: 10px
 	line-height: 1.6
@@ -1565,6 +1613,8 @@ body
 .item-config-row
 	margin-bottom: 30px
 .item-prop
+	+below(640px)
+		padding-right: 10px
 	br(10px)
 	overflow hidden
 	background: white
@@ -1577,19 +1627,26 @@ body
 	&:last-child
 		margin-bottom: 0
 .item-prop__img
+	+below(640px)
+		margin-right: 10px
+		min-width 70px
 	width: 70px
 	height: 60px
 	bg-full()
 	margin-right: 20px
 .item-prop__title
+	+below(1200px)
+		max-width 250px
 	@extend .type--sm
 	font-weight 700
 	margin-right auto
+	ellipsis()
 .item-prop__cost
+	white-space nowrap
 	@extend .type--sm
 	font-weight 700
 .item-prop__incr
-	margin-right: 20px
+	margin 0 20px 0 10px
 .ingr-row
 	f()
 	align-items center
@@ -1604,50 +1661,88 @@ body
 	padding: 0
 	margin-bottom: 15px
 	border 0
-	
+
+.ingr-incr
+	+below(640px)
+		margin: 0 5px
+
 .ingr-name
 	width: 50%
+	ellipsis()
 .ingr-cost
+	+below(640px)
+		margin: 0 5px
 	width: 10%
 	color $gray
-//.ingr-total
+	white-space nowrap
+.ingr-total
+	white-space nowrap
 .item-total
+	+below(1024px)
+		fw()
+	+below(640px)
+		fl()
 	f()
 	align-items center
 	margin-bottom: 40px
 	margin-top: 30px
 .item-total-wrap
+	+below(640px)
+		margin-right: 0
 	margin-right: 30px
 .item-total__info
 	@extend .type--sm
 	margin-bottom: 5px
 .item-total__cond
+	+below(640px)
+		margin: 20px 0
 	f()
 	align-items: flex-end
 .item-total__cost
 	@extend .type--lg
+	white-space nowrap
 	font-weight 700
 	line-height: 1
 	margin-right: 10px
-//.item-total__weight
+.item-total__weight
+	white-space nowrap
 .item-get
+	+below(640px)
+		margin: 0
+		width: 100%
+		.incr-btn--fix
+			width: 100%
 	margin-right: 20px
-
+.item-back
+	+below(1024px)
+		margin-top: 20px
 
 // construct
 .constr-wrap
+	+below(768px)
+		fw()
 	f()
 	justify-content space-between
 	align-items: flex-start
 	margin-bottom: 50px
 .constr-col
+	+below(768px)
+		order 2
+		max-width 480px
+		margin 0 auto
+		width: 100%
 	width: 30%
 .constr-img
+	+below(768px)
+		display none
 	bg-full()
 	padding: 16% 10%
 	br(30px)
 	margin-bottom: 20px
 .constr-info
+	+below(768px)
+		width: 100%
+		order 1
 	width calc(70% - 80px)
 .constr-descr
 	margin-bottom: 30px
@@ -1658,10 +1753,14 @@ body
 	margin-bottom: 30px
 
 .constr-prop-wrap
+	+below(480px)
+		grid-template-columns: 1fr
 	display: grid
 	grid-gap 20px
 	grid-template-columns: repeat(auto-fill, minmax(8rem,1fr))
 .constr-prop
+	+below(480px)
+		f()
 	br(10px)
 	cp()
 	tr()
@@ -1680,6 +1779,8 @@ body
 	padding: 20px 15px
 	width: 100%
 .constr-prop__img
+	+below(480px)
+		padding: 15%
 	padding: 40% 40%
 	bg-full()
 	position relative
@@ -1758,6 +1859,7 @@ body
 .sale-list
 	+below(640px)
 		grid-gap 20px
+		grid-template-columns: 1fr
 	display: grid
 	grid-gap 40px
 	grid-template-columns: repeat(auto-fill, minmax(18rem,1fr))
@@ -1795,6 +1897,9 @@ body
 		size 20px
 		fill $gray
 		margin-right: 10px
+	span
+		+below(640px)
+			font-size: 10px
 .sale-list__el-more
 	margin-top: 15px
 
@@ -1848,10 +1953,17 @@ body
 	bg-full()
 // deliver
 .deliver-zone
+	+below(640px)
+		fw()
 	f()
 	justify-content space-between
 	margin-bottom: 40px
 .deliver-zone__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
 	width: 30%
 .deliver-zone__head
 	f()
@@ -1873,6 +1985,9 @@ body
 	padding-left: 30px
 	line-height: 1.6
 .deliver-info
+	+below(768px)
+		grid-template-columns: 1fr
+		padding: 20px
 	br(10px)
 	border 1px solid $mark
 	padding: 20px 40px
@@ -2026,7 +2141,6 @@ body
 .cafe-item__cont
 	+below(768px)
 		width: 100%
-		padding: 0 10px
 	width: calc(45% - 40px)
 .cafe-item__title
 	+below(1024px)
@@ -2096,6 +2210,8 @@ body
 
 .gallery-slider-nav
 	.slick-slide
+		+below(640px)
+			margin: 0 5px
 		margin: 0 10px
 	.slick-current
 		tr()
@@ -2103,6 +2219,8 @@ body
 	.slick-track
 		margin-left: 0px
 	.slick-list
+		+below(640px)
+			margin: 0 -5px
 		margin: 0 -10px
 .gallery-slider
 	margin-bottom 10px
@@ -2111,15 +2229,25 @@ body
 
 // news list
 .news-list-el
+	+below(640px)
+		display block
+		margin-bottom: 20px
 	f()
 	align-items: flex-start
 	margin-bottom: 60px
 .news-list__img
+	+below(640px)
+		width: 100%
+		padding: 40% 10%
+		margin-bottom: 20px
 	br(20px)
 	bg-full()
 	padding: 10%
 	width: 35%
 .news-list__info
+	+below(640px)
+		width: 100%
+		margin-left: 0
 	width 65%
 	margin-left: 40px
 .news-list__date
@@ -2127,6 +2255,8 @@ body
 	@extend .type--xs
 	margin: 10px 0
 .news-list__text
+	+below(640px)
+		margin-bottom: 40px
 	color $gray
 	@extend .type--sm
 	line-height: 1.4
@@ -2217,12 +2347,23 @@ body
 // vacancy === end
 
 .contact-info
+	+below(640px)
+		fw()
+		p
+			margin: 10px 0
+		.map
+			margin-bottom: 0
 	f()
 	justify-content space-between
 	margin: 30px 0
 .contact-info__map
+	+below(640px)
+		width: 100%
 	width: 65%
 .contact-info__text
+	+below(640px)
+		width: 100%
+		margin-left: 0
 	width: 35%
 	margin-left: 30px
 
@@ -2230,8 +2371,13 @@ body
 	max-width 900px
 
 .subscr-conf
+	+below(640px)
+		display block
 	flex(between)
 	.login-remember
+		+below(640px)
+			width: 100%
+			margin-bottom: 20px
 		width: 60%
 		margin-bottom: 0
 
@@ -2414,6 +2560,7 @@ body
 	margin-bottom: 80px
 
 .order-add--sm
+	grid-gap 10px
 	grid-template-columns: repeat(auto-fill, minmax(10rem,1fr))
 
 
@@ -2478,14 +2625,18 @@ body
 	+below(1024px)
 		width: 100%
 		margin-bottom: 40px
+	+below(640px)
+		margin-right: 0
 	width: 60%
+	margin-right: 20px
 
 .order-condition
 	+below(960px)
 		width: 100%
 	width: calc(30% - 20px)
 	margin-left auto
-
+	.input-get__btn
+		padding: 10px
 .form-block
 	margin-bottom: 10px
 
@@ -2513,6 +2664,9 @@ body
 	font-weight: 700
 	margin-bottom: 10px
 .direction-el__text
+	+below(640px)
+		font-size: 12px
+		line-height: 1.4
 	@extend .type--sm
 .direction-el.active
 	&:before
@@ -3213,12 +3367,18 @@ select.select-beauty
 
 // bonus
 .status-info
+	+below(640px)
+		fw()
+		margin-bottom: 20px
 	f()
 	justify-content space-between
 	align-items: flex-start
 	margin-bottom: 30px
 	//grid-template-columns: repeat(auto-fill, minmax(12rem,1fr))
 .status-info__el
+	+below(640px)
+		width: 48%
+		margin-bottom: 10px
 	background: white
 	width: 30%
 	br(10px)
@@ -3228,6 +3388,13 @@ select.select-beauty
 		color white
 		background: $mark
 .status-info__wrap
+	+below(1024px)
+		.type--main
+			font-size: 12px
+			min-height auto
+			text-align center
+	+below(640px)
+		min-height auto
 	padding: 20px
 	f()
 	fl()
@@ -3240,6 +3407,9 @@ select.select-beauty
 	margin: 10px 0
 
 .status-info__footer
+	+below(640px)
+		padding: 8px 0
+		font-size: 12px
 	text-align center
 	background: white
 	padding: 7px
@@ -3250,11 +3420,17 @@ select.select-beauty
 	background: white
 	padding: 20px
 	margin-bottom: 30px
+	overflow auto
 .status-head
+	+below(640px)
+		fw()
 	f()
 	align-items: flex-end
 	margin-bottom: 30px
 .status-current
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	margin-right: 20px
 .status-current__text
 	margin-bottom: 10px
@@ -3268,7 +3444,11 @@ select.select-beauty
 	br(30px)
 	background: $gray-light
 	margin-bottom: -5px
+
 .status-row
+	+below(640px)
+		width 480px
+		
 	margin-left: -30px
 .status-state
 	flex(between)
@@ -3306,6 +3486,10 @@ select.select-beauty
 	height: 100%
 	background: $mark
 .status-total
+	+below(640px)
+		text-align: left
+		margin-left: 30px
+		font-weight: 700
 	text-align center
 	@extend .type--sm
 	margin-top: 20px
@@ -3460,3 +3644,15 @@ select.select-beauty
 .star-el
 	margin-right: 5px
 // review modal === end
+
+.modal-bonus
+	position relative
+	//max-height 500px
+	padding-right: 20px
+	margin-right: -20px
+	width calc(100% + 20px)
+
+
+.product-more
+	+above(641px)
+		display none
