@@ -11,12 +11,12 @@
     <meta name="theme-color" content="#000" />
     <meta name="msapplication-navbutton-color" content="#000" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <!--SEO-->
     <title>Document</title>
     <meta name="description" itemprop="description" content="" />
     <!--build:css ./css/vendor.css-->
     <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
     <link rel="stylesheet" href="bower/fancybox/dist/jquery.fancybox.css" />
@@ -280,7 +280,27 @@
                             <div class="item-config-total__text">Итого</div>
                             <div class="item-config-total__val">186 ₴</div>
                         </div>
-                        <div class="item-config-get btn--md btn--mark btn--full">Добавить в корзину</div>
+                        <div class="incr-btn incr-btn--fix">
+                            <div class="incr-btn__el btn--md btn--mark btn--full">Добавить в корзину</div>
+                            <div class="incr-btn-wrap">
+                                <div class="incr incr--mark incr--one">
+                                    <div class="incr__minus incr__nav">
+                                        <svg class="icon">
+                                            <use xlink:href="#minus"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="incr__val">
+                                        <span>1</span>
+                                        <div class="incr__val-coner"></div>
+                                    </div>
+                                    <div class="incr__plus incr__nav">
+                                        <svg class="icon">
+                                            <use xlink:href="#plus"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <a class="item-config-add" href="#">
                             <svg class="icon">
                                 <use xlink:href="#plus-round"></use>

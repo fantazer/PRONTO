@@ -161,6 +161,18 @@ $(document).ready(function () {
 
 	// incr
 	var incrEl= {}
+
+
+	// Переключение с кнопки на инкремент
+	// increment btn
+	$('.incr-btn__el').click(function(){
+		$(this).closest(".incr-btn").addClass('incr-btn--active');
+	});
+	$('.incr-btn .incr__minus').click(function () {
+		incrEl.value === 1 ? $(this).closest(".incr-btn").removeClass("incr-btn--active") : ''
+	})
+	// increment btn === end
+
 	$('.incr__nav').click(function(){
 		incrEl.parent = $(this).closest(".incr");
 		incrEl.value = parseInt($(this).closest(".incr").find('.incr__val span').html());
@@ -182,15 +194,6 @@ $(document).ready(function () {
 		incrEl.state.html(incrEl.value);
 	});
 
-	// Переключение с кнопки на инкремент
-	// increment btn
-	$('.incr-btn__el').click(function(){
-		$(this).closest(".incr-btn").addClass('incr-btn--active');
-	});
-	$('.incr-btn .incr__minus').click(function () {
-		incrEl.value === 1 ? $(this).closest(".incr-btn").removeClass("incr-btn--active") : ''
-	})
-	// increment btn === end
 
 	$('.incr--single .incr__nav').click(function(){
 		var parrent = $(this).closest(".incr--single")
@@ -325,7 +328,7 @@ $(document).ready(function () {
 
 	// template scroll
 	var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
-	if(!isMac && window.width > 640) {
+	if(!isMac && $(document).width() > 640) {
 		$(".scroll").niceScroll({
 			autohidemode: false,
 			cursorcolor: "#dcdcdc",
@@ -385,4 +388,24 @@ $(document).ready(function () {
 		}
 	});
 	// scroll to id === end
+
+	//upload-btn
+	$(".upload-btn").change(function () { //Если выбрал файл
+		console.log('img');
+		if (this.files && this.files[0]) {
+			$('.upload-img').append('<div class="upload-img__el" onclick="this.parentNode.removeChild(this);"></div>');
+			var currentUpload = $('.upload-img .upload-img__el:last'); //выбираем куда
+			var reader = new FileReader();
+			reader.onload = function(){
+				currentUpload.attr('style', " background-image:url( "+reader.result+ ") ");
+			}
+			reader.readAsDataURL(this.files[0]);
+		}
+	});
+	$('.upload-img__el').click(function(){
+		console.log('remove');
+		$(this).remove();
+	});
+	//upload-btn
+
 });

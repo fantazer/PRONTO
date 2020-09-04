@@ -35,7 +35,10 @@ include block_html/_include.pug
 					.item-config-total
 						.item-config-total__text Итого
 						.item-config-total__val 186 ₴
-					.item-config-get.btn--md.btn--mark.btn--full Добавить в корзину
+					.incr-btn.incr-btn--fix
+						.incr-btn__el.btn--md.btn--mark.btn--full Добавить в корзину
+						.incr-btn-wrap
+							+incr(1,"incr--mark")
 					a(href="#").item-config-add
 						+icon("plus-round","icon")
 						span сохранить в личном кабинете, но не добавлять в корзину
