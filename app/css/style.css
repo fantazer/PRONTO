@@ -506,15 +506,11 @@ a:visiter {
 .icon--md {
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
 .icon--lg {
-  width: 30px;
-  height: 30px;
-}
-.icon--left {
-  margin-left: 10px;
-}
-.icon--right {
+  width: 32px;
+  height: 32px;
   margin-right: 10px;
 }
 .icon--mark {
@@ -7735,6 +7731,60 @@ select.select-beauty {
   .product-more {
     display: none;
   }
+}
+.cookie {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+}
+.cookie--active {
+  z-index: 20;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.cookie-wrap {
+  padding: 15px 20px;
+  border-radius: 20px;
+  z-index: 10;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #eee;
+}
+.cookie-wrap .icon {
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  fill: #aaa;
+}
+.cookie-wrap .icon:hover {
+  fill: #111;
+}
+.cookie-wrap .icon:hover {
+  cursor: pointer;
+}
+.cookie-text {
+  width: -webkit-calc(100% - 30px);
+  width: calc(100% - 30px);
+  font-size: 12px;
 }
 @-webkit-keyframes slideInDown {
   from {

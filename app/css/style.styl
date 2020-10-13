@@ -3663,3 +3663,38 @@ select.select-beauty
 .product-more
 	+above(641px)
 		display none
+
+// cookie
+.cookie
+	position: fixed
+	bottom 20px
+	left 0
+	width: 100%
+	transform translateY(10px)
+	opacity: 0
+	z-index -1
+	tr(all)
+.cookie--active
+	z-index 20
+	opacity: 1
+	transform translateY(0)
+.cookie-wrap
+	padding: 15px 20px
+	br(20px)
+	z-index 10
+	background: white
+	f()
+	justify-content: space-between
+	border 1px solid $border-color
+	.icon
+		&:hover
+			fill black
+		tr()
+		size 14px
+		margin-left: 10px
+		fill gray
+		cp()
+.cookie-text
+	width calc(100% - 30px)
+	font-size: 12px
+// cookie === end
