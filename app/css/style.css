@@ -7786,6 +7786,9 @@ select.select-beauty {
   width: calc(100% - 30px);
   font-size: 12px;
 }
+.scroll {
+  overflow: scroll;
+}
 @-webkit-keyframes slideInDown {
   from {
     -webkit-transform: translate3d(0, -100%, 0);
