@@ -43,12 +43,20 @@ mixin header(type)
 						else
 							img(src="img/logo.svg", alt="")
 					.header-nav
-						a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
-						a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши
+						//a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--green Пицца
+						//a(href="#").header-nav__el.header-nav__el--mark.header-nav__el--red Суши
 						a(href="#").header-nav__el Салаты
 						a(href="#").header-nav__el Вторые блюда
 						a(href="#").header-nav__el Соусы
 						a(href="#").header-nav__el Напитки
+						a(href="#").header-nav__el Пицца
+						.header-nav__more
+							span Eще
+							.header-nav-sub
+								a(href="#").header-nav-sub__el Десерты
+								a(href="#").header-nav-sub__el Напитки
+								a(href="#").header-nav-sub__el Дополнительно
+								a(href="#").header-nav-sub__el Замороженная продукция
 					a(href="#").header-cart
 						+icon("cart","icon")
 						.header-cart__cost 1249 р

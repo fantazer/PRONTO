@@ -3701,3 +3701,56 @@ select.select-beauty
 
 .scroll
 	overflow scroll
+
+.payment-true
+	flex(mid)
+	fl()
+	max-width 320px
+	padding: 10px
+.payment-true__img
+	width: 90%
+	flex(mid)
+	margin-bottom: 20px
+.payment-true__title
+	@extend .type--lg
+	text-align center
+	font-weight: 700
+	margin-bottom: 20px
+.payment-true__text
+	text-align center
+	margin-bottom: 20px
+
+.header-nav__more
+	+above(769px)
+		position relative
+		border-bottom 1px dashed gray
+		cp()
+		white-space nowrap
+		padding: 5px 0
+		margin-left: 10px
+	span
+		font-weight: 700
+		+below(769px)
+			display none
+.header-nav-sub
+	+above(769px)
+		display none
+		position absolute
+		top calc(100% + 10px)
+		left -10px
+		box-shadow 0 0 10px rgba(0, 0, 0, 0.07)
+		border-radius 10px
+		background-color #ffffff
+		padding 20px
+		br(10px)
+		z-index 100
+		a
+			display block
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+.header-nav-sub__el
+	+below(768px)
+		padding: 5px 10px
+	&:hover
+		color $mark
