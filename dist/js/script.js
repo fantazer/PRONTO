@@ -440,4 +440,20 @@ $(document).ready(function () {
 	});
 	//bubble===end
 
+	var slideDown = function(target,container,size){
+		size = size ? size : 0
+		if($(window).width()>size){
+			$(document).mouseup(function (e) {
+				if (!$(target).is(e.target) && !$(container).is(e.target) && $(container).has(e.target).length === 0) {
+						 $(container).slideUp();
+				 }
+				 if($(target).is(e.target)){
+						$(container).slideToggle()
+				 }
+			});
+		}
+	}
+
+	slideDown('.header-nav__more span',".header-nav-sub",769)
+
 });
